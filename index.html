@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UNI Scripting Documentation</title>
+        <link rel="stylesheet" href="UniCss.css">
+    </head>
+    <body>
+        <div class="webname">
+    <h1>
+        UNI Scripting
+        <span class="Title">Documentation</span>
+    </h1>
+
+    <div class="tools">
+        <!--Un avvaible cek folder oi-->
+        <button onclick="show('utility system')">
+            <img src="icon/Polyfill.png" class="ButtonIcon">Polyfill System
+        </button>
+        <button onclick="show('setting')">
+            <img src="icon/setting.png" class="ButtonIcon">Setting
+        </button>
+        <button onclick="show('report')">
+            <img src="icon/report.png" class="ButtonIcon">Report
+        </button>
+    </div>
+</div>
+       
+            <!-- SIDEBAR -->
+        <div class="container">
+             <div class="sidebar">
+                <h3>•Base•</h3>
+                 <button onclick="show('introduction')"><img src="icon/Basic.png" class="ButtonSIcon">introduction</button>
+                 <button onclick="show('script')"><img src="icon/script.png" class="ButtonSIcon">Script</button>
+
+                 <h3>•Basics•</h3>
+                 <button onclick="show('string','stringdropdown')"><img src="icon/Text.png" class="ButtonSIcon">Text/String</button>
+                 <div id="stringdropdown" class="dropdownButton" style="display: none;">
+                    <button onclick="scrollto('index','string')">‣ Index</button>
+                    <button onclick="scrollto('join','string')">‣ Join</button>
+                    <button onclick="scrollto('getdate','string')">‣ get Date</button>
+                    <button onclick="scrollto('getdatetime','string')">‣ get Date time</button>
+                    <button onclick="scrollto('length','string')">‣ Length</button>
+                    <button onclick="scrollto('search','string')">‣ Search</button>
+                    <button onclick="scrollto('replace','string')">‣ Replace</button>
+                    <button onclick="scrollto('insert','string')">‣ Insert</button>
+                    <button onclick="scrollto('extractsingle','string')">‣ Extract single</button>
+                    <button onclick="scrollto('extractmultiple','string')">‣ Extract multiple</button>
+                    <button onclick="scrollto('abbreviation','string')">‣ Abbreviation</button>
+                    <button onclick="scrollto('tonumber','string')">‣ to Number</button>
+                    <button onclick="scrollto('cut','string')">‣ Cut/Split</button>
+                    <button onclick="scrollto('beginswith','string')">‣ Begins with</button>
+                    <button onclick="scrollto('endwith','string')">‣ End with</button>
+                    <button onclick="scrollto('contains','string')">‣ Contains</button>
+                 </div>
+                 <button onclick="show('number','numberdropdown')"><img src="icon/Number.png" class="ButtonSIcon">Math/Number</button>
+                 <div id="numberdropdown" class="dropdownButton" style="display: none;">
+                    <button onclick="scrollto('mathematicaloperations','number')">‣ Mathematical operations</button>
+                    <button onclick="scrollto('pickrandom','number')">‣ Pick random Integer</button>
+                    <button onclick="scrollto('remainder','number')">‣ Remainder</button>
+                    <button onclick="scrollto('sin','number')">‣ sin</button>
+                    <button onclick="scrollto('cos','number')">‣ cos</button>
+                    <button onclick="scrollto('pi','number')">‣ Pi</button>
+                    <button onclick="scrollto('touchposition','number')">‣ Touch Position</button>
+                    <button onclick="scrollto('betweendistance','number')">‣ Between distance</button>
+                    <button onclick="scrollto('rounding','number')">‣ Rounding</button>
+                    <button onclick="scrollto('roundingdown','number')">‣ Rounding Down</button>
+                    <button onclick="scrollto('roundingup','number')">‣ Rounding Up</button>
+                    <button onclick="scrollto('absolutevalue','number')">‣ Absolute value</button>
+                    <button onclick="scrollto('oppositevalue','number')">‣ Opposite value</button>
+                    <button onclick="scrollto('exponent','number')">‣ Exponent</button>
+                    <button onclick="scrollto('nthroot','number')">‣ Nth root</button>
+                    <button onclick="scrollto('keepndecimal','number')">‣ Keep N decimal</button>
+                    <button onclick="scrollto('noise','number')">‣ Noise/perlin Noise</button>
+                 </div>
+                 
+                 <h3>•Script fundamentals•</h3>
+                 <button onclick="show('Commands','commanddropdown')"><img src="icon/script.png" class="ButtonSIcon">Commands</button>
+                 <div id="commanddropdown" class="dropdownButton" style="display: none;">
+                     <button onclick="scrollto('print','Commands')">‣ Debug.print</button>
+                     <button onclick="scrollto('createnew','Commands')">‣ Create new</button>
+                     <button onclick="scrollto('set','Commands')">‣ Set</button>
+                     <button onclick="scrollto('execute','Commands')">‣ Execute</button>
+                     <button onclick="scrollto('tween','Commands')">‣ Tween</button>
+                     <button onclick="scrollto('comment','Commands')">‣ Comment</button>
+                 </div>
+                 <button onclick="show('Logic','logicdropdown')"><img src="icon/script.png" class="ButtonSIcon">Logic</button>
+                 <div id="logicdropdown" class="dropdownButton" style="display: none;">
+                    <button onclick="scrollto('if','Logic')">‣ if</button>
+                    <button onclick="scrollto('else','Logic')">‣ else</button>
+                    <button onclick="scrollto('elseif','Logic')">‣ else if</button>
+                    <button onclick="scrollto('and','Logic')">‣ and</button>
+                    <button onclick="scrollto('or','Logic')">‣ or</button>
+                    <button onclick="scrollto('morethan','Logic')">‣ More than(>)</button>
+                    <button onclick="scrollto('lessthan','Logic')">‣ Less than(<)</button>
+                    <button onclick="scrollto('lessorequals','Logic')">‣ Less or equals(<=)</button>
+                    <button onclick="scrollto('moreorequals','Logic')">‣ More or equals(>=)</button>
+                    <button onclick="scrollto('iscloneornot','Logic')">‣ Is clone Or not</button>
+                    <button onclick="scrollto('hastag','Logic')">‣ Hastag</button>
+                    <button onclick="scrollto('deleteclone','Logic')">‣ Delete clone</button>
+                    <button onclick="scrollto('containscomponent','Logic')">‣ Contains Component</button>
+                    <button onclick="scrollto('chainedcomparision','Logic')">‣ Chained comparision</button>
+                    <button onclick="scrollto('immediateexecution','Logic')">‣ Loop Type:immediate execution</button>
+                    <button onclick="scrollto('framebyframe','Logic')">‣ Loop Type:Frame by Frame</button>
+                    <button onclick="scrollto('keeploopuntil','Logic')">‣ Keep loop until</button>
+                    <button onclick="scrollto('loopntimes','Logic')">‣ loop N times</button>
+                    <button onclick="scrollto('looptrougheachitem','Logic')">‣ loop trough each item</button>
+                    <button onclick="scrollto('waitnseconds','Logic')">‣ Wait:seconds</button>
+                    <button onclick="scrollto('waitnframe','Logic')">‣ Wait:frame</button>
+                    <button onclick="scrollto('waituntil','Logic')">‣ Wait until</button>
+                    <button onclick="scrollto('waitforbroadcast','Logic')">‣ Wait until recieve broadcast</button>
+                    <button onclick="scrollto('break','Logic')">‣ Break</button>
+                    <button onclick="scrollto('stopallscript','Logic')">‣ Stop all Script</button>
+                 </div>
+                 <button onclick="show('Expression')"><img src="icon/script.png" class="ButtonSIcon">Expression</button>
+
+                 <h3>•Variable•</h3>
+                 <button onclick="show('globalvar')"><img src="icon/Variable.png" class="ButtonSIcon">Global variable</button>
+                 <button onclick="show('playervar')"><img src="icon/Variable.png" class="ButtonSIcon">Player variable</button>
+                 <button onclick="show('objectvar')"><img src="icon/Variable.png" class="ButtonSIcon">Object variable</button>
+             </div>
+             
+             <div class="content">
+
+                <body onload="show()">
+
+             <div id="introduction" class="page">
+                <h1>WELCOME</h1>
+                <p>Welcome to Uni Unofficial Scripting Documentation.</p>
+                <p>This website was created by <b>ShinSekai</b> to help creators learn Uni scripting more easily.</p>
+                <h3>What is this website?</h3>
+                <p>This documentation contains community-made explanations, examples, and references for Uni scripting features.</p>
+                <h3>Disclaimer</h3>
+                <p>This documentation is based on personal experience and testing. Some information may be incomplete, outdated, or differ after platform updates,
+                    also we only include a scriptable properties</p>
+                <h3>Report an Issue</h3>
+                <P>Found incorrect information or missing documentation? Please submit a report.</P>
+             </div>
+
+             <div id="script" class="page">
+                <h1>What is script?</h1>
+                <P>In Uni and other platform ,script is a buch of code use for execute instruction</P>
+                <h2>Script Type</h2>
+                <p>Uni has 2 different script type Client and Server</p>
+                <p>Note:only some user can access client type script regulations are not found</p>
+                <h2>Broadcast</h2>
+                <p>broadcast can use for send signal,broadcast also return Sender and Parameters</p>
+                <h2>How to use broadcast</h2>
+                <p>to use broadcast occasionaly use Execute block</p>
+                <p>Example: Execute(self):Send broadcast</p>
+                <h2>how to recieve broadcast</h2>
+                <p>in object properties scrool down until you see "When broadcast recieve" event if not found it click point three button in the top of properties tab
+                    then activated the broadcast recieve event
+                </p>
+                <p>Parameters only can be access if you set the parameters when created the broadcast script cant change the parameters type</p>
+                <h2>Sender</h2>
+                <p>an object who send the broadcast</p>
+
+             </div>
+
+             <div id="string" class="page">
+                <h1>What is Text?</h1>
+                <img src="BlockImg/text.png" class="scriptBlockImg">
+                <p>Text is a sequence of characters used to store words, symbols, or sentences. </p>
+                <h3>Example:"hello world"</h3>
+
+                <h2 id="index">•Index•</h2>
+                <p>UNI uses a character indexing system to locate text positions</p>
+                <p>Every character inside a text has its own position number.</p>
+                <h3>Example:Hello World</h3>
+                <p>Result:1 = H,2 = e,3 = l,4 = l,5 = o,6 = [space],7 = W,8 = o,9 = r,10 = l,11 = d]</p>
+                <p>start's with 1 and required a space</p>
+
+                <h1 id="join">Expression → Text → Join</h1>
+                <img src="BlockImg/text_join.png" class = "midscriptBlockImg">
+                <p>Join use to Join 2 or more different text</p>
+                <h3>Example:Join(hello),(world)</h3>
+                <p>result:<span class="synString">helloworld</span></p>
+
+                <h1 id="getdate">Expression → Text → Get Date</h1>
+                <img src="BlockImg/text_date.png" class = "scriptBlockImg">
+                <p>Get date use for Geting current date on your OS </p>
+                <h3>Example:GetDate(YYYY/MM/DD)</h3>
+                <p>Note: YYYY=Year, MM=Month, DD=Day</p>
+                <p>result:<span class="synString">2026/1/28</span>(example)</p>
+
+                <h1 id="getdatetime">Expression → Text → Get Date Time</h1>
+                <img src="BlockImg/text_datetime.png" class="scriptBlockImg">
+                <p>Get date times using to get current Date times like Hour,Minutes,Seconds on your OS</p>
+                <h3>Example:Get Date Times(HH:MM:SS)</h3>
+                <p>Note: HH=Hours, MM=Minutes, SS=Seconds</p>
+                <p>result:<span class="synString">20:18:55</span>(example)</p>
+
+                <h1>Property</h1>
+                <img src="Expressions/propert_expression.png" class="shortscriptBlockImg">
+
+                <img src="BlockImg/text_property (1).png" class="scriptBlockImg">
+                
+                <h2 id="length">Length</h2>
+                <img src="BlockImg/text_length.png" class="scriptBlockImg">
+                <p>Length give result of How much letters on your Text</p>
+                <h3>Example: Hello World.Length</h3>
+                <p>Note:required a space</p>
+                <p>result:<span class = "synNumber">11</span></p>
+
+                <h2 id="search">search</h2>
+                <img src="BlockImg/Text_search.png" class="longscriptBlockImg">
+                <p>search give result of the starting position of the N-th occurrence of a text inside another text.</p>
+                <h3>Example1:Hello World.Search find the(1) StringApiComponentExtention_Search_searchValue_1(Hello)location</h3>
+                <p>result:<span class = "synNumber">1</span></p>
+                <p>Note:Hello>H[First Letters]>1[Index of H]</p>
+                <h3>Example2:Hello World.Search find the(1) StringApiComponentExtention_Search_searchValue_1(L)location</h3>
+                <p>result:<span class = "synNumber">3</span></p>
+                <p>Note:L>3[index of first L]</p>
+
+                <h2 id="replace">replace</h2>
+                <img src="BlockImg/text_replace.png" class="longscriptBlockImg">
+                <p>replace to replace all text with other text</p>
+                <h3>Example:Hello World.Replace replace all(World) = (guys)</h3>
+                <p>result:<span class="synString">Hello guys</span></p>
+
+                <h2 id="insert">insert</h2>
+                <img src="BlockImg/text_insert.png" class="longscriptBlockImg">
+                <p>Inserts a text immediately after the selected index position.</p>
+                <h3>Example:Hello World.insert at (5) position (great)</h3>
+                <p>result:<span class="synString">Hellogreat World</span></p>
+
+                <h2 id="extractsingle">extract single</h2>
+                <img src="BlockImg/text_extractsingle.png" class="midscriptBlockImg">
+                <p>Returns the character located at the selected index position.</p>
+                <h3>Example:Hello World.extract single extract the 1 letters</h3>
+                <p>result:<span class="synString">H</span></p>
+
+                <h2 id="extractmultiple">extract multiple</h2>
+                <img src="BlockImg/text_extractmultiple.png" class="longscriptBlockImg">
+                <p>use for extract Letters between 2 index</p>
+                <h3>Example:Hello World.extract from (1) to (6) position in text</h3>
+                <p>result:<span class="synString">Hello</span></p>
+                <p>Note1:doesn't required a letters in last index between 2 different index</p>
+                <p>Note2:cant extract letters between same index</p>
+
+                <h2 id="abbreviation">abbreviation</h2>
+                <img src="BlockImg/text_abreviation.png" class="midscriptBlockImg">
+                <p>to extract letters from first index to selected end index</p>
+                <h3>Example:Hello World.Abbreviation shorten as(5) letters</h3>
+                <p>result:<span class="synString">Hello</span></p>
+
+                <h2 id="tonumber">to number</h2>
+                <img src="BlockImg/text_tonumber.png" class="scriptBlockImg">
+                <p>use to extract string to number</p>
+                <h3>Example:100.to number</h3>
+                <p>result:<span class="synNumber">100</span></p>
+                <p>Note:to number doesnt work if the text Contains letters</p>
+
+                <h2 id="cut">cut</h2>
+                <img src="BlockImg/text_cut.png" class="midscriptBlockImg">
+                <p>Splits a text into multiple parts using the specified text as a separator,cut also can split all word in text</p>
+                <h3>Example:Hello World.Cut cut string(World)</h3>
+                <p>result:<span class = "synArray">[<span class="synString">Hello</span>,<span class="synString">" "</span>]</span></p>
+                <p>Note:Uni may cant print array use this script below this text instead</p>
+                <img src="BlockImg/text_cutprintexample.png" class = "longscriptBlockImg">
+
+                <h1>text property type:Logic</h1>
+                <p>A Category for checking conditions</p>
+                <p>if yes return <span class = "booleantrue">True</span> if not retrun <span class="booleanfalse">False</span></p>
+
+                <h2 id="beginswith">begins with</h2>
+                <img src="BlockImg/text_beginswith.png" class = "midscriptBlockImg">
+                <p>used for checking is the text begins with selected leters?</p>
+                <h3>Example:Hello World.BeginsWith with(H) at the beginning</h3>
+                <p>result=<span class = "booleantrue">True</span></p>
+                <p>if not "H" will return <span class="booleanfalse">False</span></p>
+
+                <h2 id="endwith">end with</h2>
+                <img src="BlockImg/text_endwith.png" class = "midscriptBlockImg">
+                <p>used for checking is the text ends with selected leters?</p>
+                <h3>Example:Hello World.EndsWith with(d) at the end</h3>
+                <p>result=<span class = "booleantrue">True</span></p>
+                <p>if not "d" will return <span class="booleanfalse">False</span></p>
+
+                <h2 id="contains">contains</h2>
+                <img src="BlockImg/text_contains.png" class = "midscriptBlockImg">
+                <p>used for checking is the text has selected leters or selected words?</p>
+                <h3>Example1:Hello World.Contains contain(World)</h3>
+                <p>result=<span class = "booleantrue">True</span></p>
+                <p>if not contains <span class="synString">World</span> will return <span class="booleanfalse">False</span></p>
+
+                 <h3>Example2:Hello World.Contains contain(W)</h3>
+                <p>result=<span class = "booleantrue">True</span></p>
+                <p>if not contains <span class="synString">W</span> will return <span class="booleanfalse">False</span></p>
+             </div>
+
+             <div id="number" class="page">
+                <h1>What is number?</h1>
+                <img src="BlockImg/number.png" class="scriptBlockImg">
+                <p>UNI uses number for mathematical concept and value used to count, measure, and label quantities</p>
+                <h3>Example:10</h3>
+
+                <h2><span style="color:#d44949;">Disclaimer: Decimal separator may depend on your device language or region settings</span></h2>
+                <h2><span style="color:#d44949;">Some devices use "." while others use "," for decimal numbers</span></h2>
+
+                <h1 id="mathematicaloperations">Expression → Number → mathematical operations</h1>
+                <img src="BlockImg/number_math.png" class="midscriptBlockImg">
+                <p>mathematical operation use for modify the value.mathematical operation like summation<img src="BlockImg/summation.png" class="iconscriptblockimg">/subtraction<img src="BlockImg/substraction.png" class="iconscriptblockimg">/multiplication<img src="BlockImg/multiply.png" class="iconscriptblockimg">/divide<img src="BlockImg/divide.png" class="iconscriptblockimg"> </p>
+                <h3>Example:10+10</h3>
+                <p>result=<span class = "synNumber">20</span></p>
+
+                <h1 id="pickrandom">Expression → Number → pick random</h1>
+                <img src="BlockImg/number_pickrandom.png" class="midscriptBlockImg">
+                <p>using for pick random number between selected number</p>
+                <h3>Example:1 to 100 pick random integer</h3>
+                <p>result=<span class = "synNumber">88</span></p>
+
+                <h1 id="remainder">Expression → Number → remainder</h1>
+                <img src="BlockImg/number_remainder1.png" class="midscriptBlockImg">
+                <p>Returns the remainder after dividing one number by another.</p>
+                <h3>Example1:10/4</h3>
+                <p>result=<span class = "synNumber">2</span> .because 10/4=2 remainder 2</p>
+                <h3>Example2: 10/2</h3>
+                <img src="BlockImg/remainder.png" class="midscriptBlockImg">
+                <p>result=<span class = "synNumber">0</span> .because 10/2 = 5 remainder 0</p>
+                <p>Note:Similar to % (modulo) in many programming languages such as Lua, Luau, JavaScript, and Python.</p>
+
+                <h1>Expression → Number → Sin/Cos</h1>
+                <h2 id="sin">Sin</h2><img src="BlockImg/number_sin.png" class="scriptBlockImg">
+                <p>The Sin block returns a value between -1 and 1 based on an angle.
+                    Because the value changes smoothly over time.</p>
+                <h3>Examples&Result:Sin(0)   = <span class = "synNumber">0</span> ,Sin(90)  = <span class = "synNumber">1</span> ,sin(180) = <span class = "synNumber">0</span> ,Sin(270) = <span class = "synNumber">-1</span></h3>
+                <h2 id="cos">Cos</h2><img src="BlockImg/number_cos.png" class="scriptBlockImg">
+                <p>The Cos block returns a value between -1 and 1 based on an angle.
+                    It works similarly to Sin, 
+                    but starts at a different position in the wave cycle.</p>
+                <h3>Examples&Result:cos(0)   = <span class = "synNumber">1</span> ,
+                    cos(90)  = <span class = "synNumber">0</span> ,
+                    cos(180) = <span class = "synNumber">-1</span> ,
+                    cos(270) = <span class = "synNumber">0</span></h3>
+
+                <h2>Sin Cos Graph</h2>
+                <video class="demoVideo" controls autoplay muted loop> <source src="Video/SinCosGraphDocs.mp4" type="video/mp4"></video>
+                <img src="BlockImg/number_singraphscript.png" class="longscriptBlockImg">
+                <p>Note:Sin(blue),Cos(Red)</p>
+
+                <h1 id="pi">Expression → Number → PI</h1>
+                <img src="BlockImg/number_PI.png" class="smallscrptBlockImg">
+                <p>Returns the mathematical constant Pi (π)</p>
+                <h3>Example:PI = <span class = "synNumber">3.14159265...</span></h3>
+                <h1 id="touchposition">Expression → Number → touch (X/Y) Position</h1>
+                <img src="BlockImg/number_touchPosition.png" class="scriptBlockImg">
+                <h2>Touch X Position</h2>
+                <p>Returns the current horizontal touch position on the player's screen.</p>
+                <h2>Touch Y Position</h2>
+                <p>Returns the current vertical touch position on the player's screen.</p>
+                <h2>Usage</h2>
+                <p>Touch X Position and Touch Y Position can be used as an alternative way to get the player's touch position without using a Touch Event.
+                    this is useful when Touch Events are unavailable or when the player is interacting with UI elements that prevent Touch Events from firing.</p>
+                <p>Notes:Requires continuous updates (looping) to track movement.
+                    Can be accessed from different scripts.
+                    Works while interacting with UI elements.
+                    Can be used without Touch Events.</p>
+                <h1 id="betweendistance">Expression → Number → Between Distance</h1>
+                <img src="BlockImg/number_betweendistanceobj.png" class="midscriptBlockImg">
+                <p>Use for Calculate distance Between 2 different Object</p>
+                <p>Note:Only 3D to 3D object or Only 2D to 2D Object</p>
+
+                <h1>number property</h1>
+                <h2 id="rounding">Rounding</h2>
+                <img src="BlockImg/number_rounding.png" class="scriptBlockImg">
+                <p>use for rounding decimal number to integer</p>
+                <h3>Example:10.55 Rounding</h3>
+                <p>result=<span class="synNumber">11</span></p>
+                <h3>Example = 10.4 Rounding</h3>
+                <p>result=<span class="synNumber">10</span></p>
+                <p>note:if decimal number >5 = rounding up</p>
+                <p>if decimal <= 5 = rounding down</p>
+
+                <h2 id="roundingdown">Rounding Down</h2>
+                <img src="BlockImg/number_roundingdown.png" class="scriptBlockImg">
+                <p>always rounding down decimal number to integer</p>
+                <h3>Example:10.55 Rounding down</h3>
+                <p>result:<span class="synNumber">10</span></p>
+
+                 <h2 id="roundingup">Rounding up</h2>
+                <img src="BlockImg/number_roundingup.png" class="scriptBlockImg">
+                <p>always rounding up decimal number to integer</p>
+                <h3>Example:10.55 Rounding Up</h3>
+                <p>result:<span class="synNumber">11</span></p>
+
+                 <h2 id="absolutevalue">Absolute value</h2>
+                <img src="BlockImg/number_absvalue.png" class="scriptBlockImg">
+                <p>change negative number to positive</p>
+                <h3>Example:-20 Abs Value</h3>
+                <p>result:<span class="synNumber">20</span></p>
+
+                 <h2 id="oppositevalue">opposite value</h2>
+                <img src="BlockImg/number_oppositevalue.png" class="scriptBlockImg">
+                <p>change number to opposite number</p>
+                <h3>Example1:12 opposite value</h3>
+                <p>result:<span class="synNumber">-12</span></p>
+                <h3>Example2:-40 opposite value</h3>
+                <p>result: <span class="synNumber">40</span></p>
+
+                 <h2 id="exponent">exponent</h2>
+                <img src="BlockImg/number_exponent.png" class="scriptBlockImg">
+                <p>Exponent is used to raise a number to a selected power</p>
+                <h3>Example: 2.Exponent to the (2) power</h3>
+                <p>result:<span class="synNumber">4</span></p>
+                <p>Note: 2² = 2 × 2 = 4</p>
+
+                <h2 id="nthroot">Nth Root</h2>
+                <img src="BlockImg/number_nthroot.png" class="scriptBlockImg">
+                <p>Returns the N-th root of a number.</p>
+                <h3>Example: 16 Nth Root to the (2) root</h3>
+                <p>result:<span class="synNumber">4</span></p>
+                <p>Note: 2nd root = square root (√), 3rd root = cube root (∛).</p>
+
+                <h2 id="keepndecimal">Keep N Decimal</h2>
+                <img src="BlockImg/number_keepNdecimal.png" class="scriptBlockImg">
+                <p>Rounds a number and keeps the selected amount of decimal places.</p>
+                <h3>Example: 12.23 Keep (1) Decimal</h3>
+                <p>result:<span class="synNumber">12.2</span></p>
+
+                <h1 id="noise">Noises(Custom by shinsekai)</h1>
+                <p>Noises usualy to make a terrain generator also this is to make terrain generator</p>
+                <h2>HOW TO USE(<span style="color: #d44949;">IMPORTANT</span>)</h2>
+                <h2>#1 local variable</h2>
+                <img src="BlockImg/math_noiselocalVar.png" class="scriptBlockImg">
+                <p>Size:Size of the map</p>
+                <p>X:X start position</p>
+                <p>Z:Z start position</p>
+                <h2>config</h2>
+                <img src="BlockImg/math_noiseConfig.png" class="longscriptBlockImg">
+               
+                <p>formula:</p>
+                <p>SinX1=Sin(X*0.1)</p>
+                <p>SinZ1=Sin(Z*0.1)</p>
+                <p>SinX2=Sin(X*0.07+10)*0.5</p>
+                <p>SinZ2=Sin(Z*0.07+10)*0.5</p>
+                <p>SinX3=Sin(X*0.13+25)*0.3</p>
+                <p>SinZ3=Sin(Z*0.13+25)*0.3</p>
+                <h3>SinX=SinX1+SinX2+SinX3</h3>
+                <h3>SinZ=SinZ1+SinZ2+SinZ3</h3>
+                <h3>Height=SinX+SinZ</h3>
+                <p>Using multiple Sin waves with different frequencies and amplitudes creates more natural terrain shapes.</p>
+                <p>(ShinSekai:Sorry if the formula is too long i do my best😭)</p>
+
+                <h3>Polishing</h3>
+                 <img src="BlockImg/math_noisespawnObj.png" class="verylongscriptBlockImg">
+                <img src="BlockImg/math_noiseterrain.png" class="longscriptBlockImg">
+            </div>
+
+            <div id="Commands" class="page"> 
+                <h1 id="print">Debug.print</h1>
+                <img src="logicBlockimg/command_debug print.png" class="shortscriptBlockImg">
+                <p>debug print used to print value when script is running</p>
+                <p>note:Debug print cant print array/table value</p>
+
+                <h1 id="createnew">create new</h1>
+                <img src="logicBlockimg/command_createnew.png" class="midscriptBlockImg">
+                <p>use to create new local variable with value,Variables created with Create New are local and can only be used inside the current script.</p>
+
+                <h1 id="set">Set</h1>
+                <img src="logicBlockimg/command_set.png" class="midscriptBlockImg">
+                <p>use to set value of variable or object property</p>
+                <p>if value is a number "change to" can be change to <b>"Reduce"(-)</b> and <b>"add"(+)</b></p>
+                <p>Note:do not use property block if your variable type is number or string.also different object has different property check object property instead</p>
+
+                <h1 id="execute">execute</h1>
+                <img src="logicBlockimg/command_execute.png" class="scriptBlockImg">
+                <p>use for Calls a method/function from an object</p>
+                <p>similar to Method ":" in roblox luau</p>
+                <p>Note:The available methods depend on the selected object</p>
+
+                <h1 id="tween">tween</h1>
+                <img src="logicBlockimg/command_tween.png" class="longscriptBlockImg">
+                <p>tween used to tween object property contains number</p>
+                <p>Tween able property:3D/2D location,3D/2D Rotation,3D/2D Size,Color,UI Group transparency,UI transparency,UI object Scale,<b>and More...</b></p>
+                <h2>Easing Style</h2>
+                <h3>Linear/Smooth/Prog</h3>
+                 <video class="demoVideo" controls autoplay muted loop> <source src="Video/linearDocs1.mp4" type="video/mp4"></video>
+                <h3>quadratics</h3>
+                <video class="demoVideo" controls autoplay muted loop> <source src="Video/quadraticDocs.mp4" type="video/mp4"></video>
+                <h3>return motion</h3>
+                <video class="demoVideo" controls autoplay muted loop> <source src="Video/returnMotionDocs.mp4" type="video/mp4"></video>
+                <h3>spring return motion</h3>
+                <video class="demoVideo" controls autoplay muted loop> <source src="Video/SpringReturnMotionDocs.mp4" type="video/mp4"></video>
+                <h3>bounce</h3>
+                <video class="demoVideo" controls autoplay muted loop> <source src="Video/BounceDocs.mp4" type="video/mp4"></video>
+                <h1 id="comment">comment</h1>
+                <img src="logicBlockimg/command_comment.png" class="scriptBlockImg">
+                <p>Comments are used to add notes inside scripts.Comments do not affect script execution.</p>
+            </div>
+            <div id="Logic" class="page">
+                <h1 id="if">if</h1>
+                <img src="logicBlockimg/logic_if.png" class="scriptBlockImg">
+                <p>IF checks a condition.If the condition is True, the script inside IF will run.If the condition is False, the script will be skipped.</p>
+                <p>basic logic operators is equals(=) compare two value and return conditions can compare any value</p>
+                <h3>Example1:if 2+2 = 4</h3>
+                <p>result=condition:<span class="booleantrue">true</span>. because 2+2=4</p>
+                <h3>Example2:if 3+3 = 4</h3>
+                <p>result=condition:<span class="booleanfalse">false</span>. because 3+3=6 not 4</p>
+                <h2 id="else">else</h2>
+                <p>Else is used when the IF condition is False.Run when all conditions are False</p>
+                <h3>Example:if 9+9 = 16</h3>
+                <p>result=condition=<span class="booleanfalse">false</span>.because 9+9=18</p>
+                <h2 id="elseif">else if</h2>
+                <p>Else If checks another condition when the previous IF or Else If condition is False</p>
+
+                <h2>Logic Operators</h2>
+                <h3 id="and">And</h3>
+                <p>If one condition is False, the result will be False.</p>
+                <p><b>Example:</b></p>
+                <p>if true and true = <span class="booleantrue">true</span></p>
+                <p>if true and false = <span class="booleanfalse">false</span></p>
+                <p>if false and false = <span class="booleanfalse">false</span></p>
+                <h3 id="or">Or</h3>
+                <p>If one condition is True, the result will be True.</p>
+                <p><b>Example:</b></p>
+                <p>if true or true = <span class="booleantrue">true</span></p>
+                <p>if true or false = <span class="booleantrue">true</span></p>
+                <p>if false or false = <span class="booleanfalse">false</span></p>
+
+                <p>note:"or"&"and" can also be stacked . <b>Example:</b> if true and (true or true)</p>
+
+                <h2>Comparison Operators</h2>
+                <p>this comparision only can be used for number type value</p>
+                <h3 id="morethan">more than<img src="logicBlockimg/morethan.png" class="iconscriptblockimg"></h3>
+                <p>use to check value is more than or not.run script if the value is more than</p>
+
+                <h3 id="lessthan">less than<img src="logicBlockimg/lessthan.png" class="iconscriptblockimg"></h3>
+                <p>use to check value is less than or not.run script if the value is less than</p>
+
+                <h3 id="lessorequals">less or equals<img src="logicBlockimg/lessorequals.png" class="iconscriptblockimg"></h3>
+                <p>use to check value is less than or equals.run script if the value is more than or equals</p>
+
+                <h3 id="moreorequals">more or equals<img src="logicBlockimg/moreorequals.png" class="iconscriptblockimg"></h3>
+                <p>use to check value is more than or equals.run script if the value is less than or equals</p>
+
+                <h2 id="iscloneornot">Expression→boolean→is clone or not</h2>
+                <img src="logicBlockimg/logic_cloneornot.png" class="scriptBlockImg">
+                <p>use to checking is the object was created in script or not</p>
+                
+                <h2 id="hastag">Expression→boolean→Hastag</h2>
+                 <img src="logicBlockimg/logic_hastag.png" class="scriptBlockImg">
+                <p>checking the object has selected tag or not</p>
+
+                <h2 id="deleteclone">Expression→boolean→Delete clone</h2>
+                 <img src="logicBlockimg/logic_deleteclone.png" class="shortscriptBlockImg">
+                <p>to delete object was created in script</p>
+                <p>note:make sure the object you want to delete is object who created in script</p>
+
+                <h2 id="containscomponent">Expression→boolean→Contains Component</h2>
+                <img src="logicBlockimg/logic_containsComponent.png" class="scriptBlockImg">
+                <p>to check the object was contains the selected Component or not</p>
+
+                <h2 id="chainedcomparision">Expression→boolean→chained comparision</h2>
+                <img src="logicBlockimg/logic_chained.png" class="longscriptBlockImg">
+                <p>chained Comparison only accept number type value and only can use 2 type of comparision operators less than and less or equals</p>
+                <p>use for checking chained value is less than others</p>
+                <h3>Example:0 <= 50 <= 100</h3>
+                <p>0<= 50 = true</p>
+                <p>50 <= 100 = true</p>
+                <p>need 2 true condition</p>
+
+                <h1>Looping</h1>
+                <p>Loop repeats a block of code multiple times.</p>
+
+                <h2>Loop type</h2>
+                <p>Uni has 2 different loop type <b>immediate excution</b> and <b>Frame by Frame</b></p>
+                <h2 id="immediateexecution">Immediate execution</h2>
+                <p>Runs repeatedly using a built-in delay</p>
+                <p>Note: The delay cannot be changed and its exact duration is currently unknown</p>
+                <h2 id="framebyframe">frame by frame</h2>
+                <p>Runs once every frame,The execution speed depends on the device's FPS</p>
+
+                <h3>Example</h3>
+                <p>60 FPS = approximately 60 executions per second.</p>
+                <p>30 FPS = approximately 30 executions per second.</p>
+                <p>Note: Performance may vary depending on device FPS.same with immediate execution The delay cannot be changed and its exact duration is currently unknown</p>
+
+                <h2 id="keeploopuntil">keep loop until</h2>
+                <img src="logicBlockimg/logic_keeploopuntil.png" class="longscriptBlockImg">
+                <p>Repeats the loop while the condition is False</p>
+                <h3>Example</h3>
+                <p>False → Loop runs.</p>
+                <p>True → Loop stops.</p>
+                <p>Note: The loop will only continue while the condition evaluates to False.</p>
+
+                <h2 id="loopntimes">loop any times</h2>
+                <img src="logicBlockimg/logic_looptimes.png" class="longscriptBlockImg">
+                <p>repeat the loop any times you want.not depend on conditions</p>
+
+                <h2 id="looptrougheachitem">create new loop trough each item of the </h2>
+                <img src="logicBlockimg/logic_loopcreatenew.png" class="longscriptBlockImg">
+                <p>this loop depend of how many item inside the target</p>
+                <p>Create New is a temporary variable that represents the current item in the loop</p>
+                <h3>Example:create new(A) loop through each item of the (array global variable)</h3>
+                
+                <p>array global variable=<span class="synArray">{<span class="synNumber">10</span>,<span class="synNumber">2</span>,<span class="synNumber">8</span>}</span></p>
+                <p>result:loop 1 A=<span class="synNumber">10</span>,loop 2 A=<span class="synNumber">2</span>,loop 3 A=<span class="synNumber">8</span></p>
+                <p>note:local variable value can be Current child(part) of a model or Current value from an array</p>
+
+                <h1>Wait</h1>
+                <h2 id="waitnseconds">Wait any Seconds</h2>
+                <img src="logicBlockimg/logic_wait seconds.png" class="shortscriptBlockImg">
+                <p>stop script any secods you want also can use decimal number</p>
+                <h2 id="waitnframe">Wait any Frame</h2>
+                <img src="logicBlockimg/logic_waitframe.png" class="shortscriptBlockImg">
+                <p>stop script any frames you want depend on your FPS</p>
+                <p>The actual duration depends on the device FPS</p>
+                <p>note:cant use decimal!</p>
+                <h2 id="waituntil">wait until</h2>
+                <img src="logicBlockimg/logic_waituntilConditions.png" class="midscriptBlockImg">
+                <p>stop script until the conditions is true</p>
+                <h2 id="waitforbroadcast">wait until recieve broadcast</h2>
+                <img src="logicBlockimg/logic_waituntilrecievebroadcast.png" class="scriptBlockImg">
+                <p>stop script until self has recieve the selected broadcast</p>
+
+                <h1 id="break">break</h1>
+                <img src="logicBlockimg/logic_break.png" class="smallscrptBlockImg">
+                <p>used to stop loop</p>
+
+                <h1 id="stopallscript">stop all script</h1>
+                <img src="logicBlockimg/logic_stopallscript.png" class="smallscrptBlockImg">
+                <p>used to stop all active script</p>
+            </div>
+            <div id="Expression" class="page">
+                <h1>Current Player</h1>
+                <p>Returns the player currently using the UI. This expression is commonly used to access player-related data such as name, character, inventory, and custom player values.</p>
+                <p>this block same as player block and player block only can get from an event who return player like button UI when button clicked</p>
+                <p>Note: This expression can only access inside UI scripts.</p>
+
+                <h1>Get World Object</h1>
+                <p>Returns a reference to a 3D world object or a 2D UI object. This expression is commonly used to access object properties, and components.</p>
+                <p>It can be used to interact with existing objects in the world or retrieve components attached to an object.</p>
+
+                <h1>Self</h1>
+                <p>Returns the object that owns or executes the current script.</p>
+                <h1>System</h1>
+                <p>Returns the system object, which provides access to built-in engine features and APIs.</p>
+                <h2>Properties</h2>
+                <p>System properties is a lighting system and enviroment</p>
+                <button onclick="toggleinfo('audio')">Audio:</button>
+                <div id="audio" style="display: none;" class="card">
+                    <h2>BGM (Background Music)</h2> <p>Gets or changes the current background music of the map.</p>
+                    <h2>BGM Volume</h2> <p>Controls the volume of the background music.</p> <p><b>Range:</b> 0 - 100</p> <p><b>Note:</b> The maximum volume is 100.</p>
+                </div>
+                <button onclick="toggleinfo('sky')">Sky:</button>
+                <div id ="sky" style="display: none;" class="card">
+                    <h2>Sky</h2>
+                     <p>Changes the Skybox displayed around the map.</p> 
+                     <p><b>Note:</b> The Skybox is a visual background and is separate from Distant View.</p>
+                    <h2>Sky Fog Intense</h2> 
+                    <p>Controls the fog visibility applied to the Skybox.</p>
+                     <p><b>Note:</b> This property only affects the Skybox.</p>
+                    <p><b>Info:</b> Horizon Height is not scriptable in Uni 2.53.</p> 
+                    <p>Please submit a report if Horizon Height becomes scriptable in future versions.</p>
+
+
+                </div>
+                <button onclick="toggleinfo('lighting')">Lighting:</button>
+                <div id="lighting" style="display: none;" class="card">
+                    <h2>Light Color</h2> <p>Changes the color of the main directional light.</p> <p>This affects the overall lighting color of the scene.</p>
+                    <h2>Light Intensity</h2> 
+                    <p>Controls the brightness of the main light source.</p>
+                    <p>Higher values make the map brighter.</p>
+                    <h2>Light Angle</h2> 
+                    <p>Controls the vertical position of the light source.</p>
+                    <p>This can be used to simulate sunrise, sunset, or midday lighting.</p>
+                    <h2>Light Direction</h2>
+                    <p>Controls the horizontal rotation of the light source.</p> 
+                    <p>Changes the direction from which shadows and light are cast.</p>
+                    <h2>Ambient Color</h2> 
+                    <p>Changes the ambient light color of the scene.</p> 
+                    <p>Ambient light affects areas that are not directly lit by the main light.</p>
+                    <p><b>Note:</b> Darker ambient colors may appear more transparent.</p> </p>
+                </div>
+                <button onclick="toggleinfo('view')">View&filter:</button>
+                <div id="view" style="display: none;" class="card">
+                    <h2>Distant View</h2>
+                    <p>Displays a large decorative 3D background beyond the playable area.</p>
+                    <p>Available types:</p>
+                    <ul>
+                        <li>None</li>
+                        <li>City/Hills</li>
+                        <li>Space</li>
+                        <li>Desert</li>
+                    </ul>
+                    <p><b>Note:</b> Distant View is look like a 3D object and not part of the Skybox.</p>
+                    <p><b>Note:</b> Distant View does not scale with map size. On very large maps, players may be able to get close to it.</p>
+                    <h2>View Direction</h2>
+                    <p>Rotates the Distant View horizontally.</p>
+                    <p>Range: 0° - 360°</p>
+                    <h2>Filter</h2>
+                    <p>Applies a visual filter to the rendered scene.</p>
+                    <p>Available modes:</p>
+                    <ul>
+                        <li>Normal</li>
+                        <li>Pixelated</li>
+                    </ul>
+                    <p><b>Note:</b> Filters affect Distant View.</p>
+                    <p><b>Note:</b> Filters do not affect the Skybox.</p>
+                    <p><b>Fun Fact:</b> Pixelated mode may improve performance on some devices.</p>
+                    <p><b>Fun Fact:</b> Pixelated mode adds pixel-style outlines to 3D objects also distant view.</p>
+
+                </div>
+                <button onclick="toggleinfo('floor')">Floor/Baseplate:</button>
+                <div id="floor" style="display: none;" class="card">
+                    <h2>Floor Size</h2>
+                    <p>Controls the size of the base floor.</p>
+                    <p>Available sizes:</p>
+                    <ul>
+                        <li>Hide</li>
+                        <li>Small</li>
+                        <li>Medium</li>
+                        <li>Large</li>
+                    </ul>
+
+                    <p><b>Note:</b> Floor Size uses presets and cannot be set using Vector3 values.</p>
+
+                    <h2>Floor Color</h2>
+                    <p>Changes the color of the floor.</p>
+
+                    <h2>Tint Mode</h2>
+                    <p>Controls how floor coloring is applied.</p>
+
+                    <p>Available modes:</p>
+                    <ul>
+                        <li>Overlay</li>
+                        <li>Tint</li>
+                    </ul>
+
+                    <h2>Floor Texture</h2>
+                    <p>Changes the texture used by the floor.</p>
+
+                </div>
+                <button onclick="toggleinfo('fog')">Weather&fog:</button>
+                <div id="fog" style="display: none;" class="card">
+                    <h2>Weather</h2>
+                    <p>Controls the current weather effect of the map.</p>
+                    <p>Available types:</p>
+                    <ul>
+                        <li>None</li>
+                        <li>Drizzle</li>
+                        <li>Rain</li>
+                        <li>Snow</li>
+                    </ul>
+
+                    <h2>Fog Color</h2>
+                    <p>Changes the color of the fog.</p>
+                    <p>Objects inside the fog will gradually blend with this color.</p>
+
+                    <h2>Fog Distance</h2>
+                    <p>Controls how far the fog starts from the camera.</p>
+                    <p>Higher values make nearby objects disappear into the fog sooner.</p>
+
+                    <h2>Fog Intense</h2>
+                    <p>Controls the visibility and transparency of the fog.</p>
+                    <p>Higher values make the fog stronger and easier to notice.</p>
+
+                    <h2>Fog Bias</h2>
+                    <p>Controls the thickness and density of the fog.</p>
+                    <p>Higher values make the fog appear heavier.</p>
+
+                    <p><b>Note:</b> Fog effects also affect Distant View objects.</p>
+
+                </div>
+
+
+                <h1>All Players</h1>
+                <p>Returns a collection containing all players currently in the same server.</p>
+                <p>Useful for multiplayer features such as broadcasting messages, looping through players, or applying actions to every player in the game.</p>
+                <p>type:<b>array</b></p>
+
+            </div>
+
+        </div>
+        </div>
+         <script src="UniJavaS.js"></script>
+    </body>
+</html>
