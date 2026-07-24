@@ -14,7 +14,7 @@
 
     <div class="tools">
         <!--Un avvaible cek folder oi-->
-        <button onclick="show('utility system')">
+        <!--<button onclick="show('utility system')">
             <img src="icon/Polyfill.png" class="ButtonIcon">Polyfill System
         </button>
         <button onclick="show('setting')">
@@ -22,7 +22,7 @@
         </button>
         <button onclick="show('report')">
             <img src="icon/report.png" class="ButtonIcon">Report
-        </button>
+        </button>-->
     </div>
 </div>
        
@@ -113,6 +113,10 @@
                     <button onclick="scrollto('stopallscript','Logic')">‣ Stop all Script</button>
                  </div>
                  <button onclick="show('Expression')"><img src="icon/script.png" class="ButtonSIcon">Expression</button>
+                 <div id="expressiondropdown" class="dropdownButton" style="display: none;">
+                    <button onclick="scrollto('currentplayer','Expression')">Current Player</button>
+                    
+                 </div>
 
                  <h3>•Variable•</h3>
                  <button onclick="show('globalvar')"><img src="icon/Variable.png" class="ButtonSIcon">Global variable</button>
