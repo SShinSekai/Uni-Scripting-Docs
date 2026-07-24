@@ -177,7 +177,8 @@ p {
 
 }
 .warn {
-    color:#ff2626bd
+    color:#ff2626bd;
+    text-shadow: 0 0 10px #eb3c3c;
 }
 
 .methodcard {
