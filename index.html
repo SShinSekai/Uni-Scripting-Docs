@@ -73,7 +73,21 @@
                     <button onclick="scrollto('keepndecimal','number')">‣ Keep N decimal</button>
                     <button onclick="scrollto('noise','number')">‣ Noise/perlin Noise</button>
                  </div>
-                 
+                 <button onclick="show('array','arraydropdown')"><img src="icon/brackets.png" class="ButtonSIcon">Array</button>
+                 <div id="arraydropdown" class="dropdownButton" style="display: none;">
+                    <button onclick="show('nthitem','array')">N-th item</button>
+                    <button onclick="show('arraylength','array')">Length</button>
+                    <button onclick="show('randomitem','array')">Random Item</button>
+                    <button onclick="show('existinthe','array')">Exist in the N-th item</button>
+                    <button onclick="show('findindex','array')">Find Index</button>
+                    <button onclick="show('containsornot','array')">Contains or not</button>
+                    <button onclick="show('maxval','array')">Max Value[Number Array]</button>
+                    <button onclick="show('minval','array')">Min Value[Number Array]</button>
+                    <button onclick="show('aveval','array')">Average Value[Number Array]</button>
+                    <button onclick="show('sum','array')">Sum[Number Array]</button>
+                    <button onclick="show('concatenate','array')">Concatenate[Number Array]</button>
+                    <button onclick="show('renamedprop','array')">Renamed Properties</button>
+                 </div>
                  <h3>•Script fundamentals•</h3>
                  <button onclick="show('Commands','commanddropdown')"><img src="icon/script.png" class="ButtonSIcon">Commands</button>
                  <div id="commanddropdown" class="dropdownButton" style="display: none;">
@@ -454,6 +468,150 @@
                 <h3>Polishing</h3>
                  <img src="BlockImg/math_noisespawnObj.png" class="verylongscriptBlockImg">
                 <img src="BlockImg/math_noiseterrain.png" class="longscriptBlockImg">
+            </div>
+
+            <div id="array" class="page">
+                <h1>Array</h1>
+
+                <p>
+                    Arrays store multiple values of the same data type in a single variable.
+                </p>
+
+                <p><b>Note:</b> Arrays can only store one data type. Nested arrays are not supported.</p>
+
+                <h2>Properties</h2>
+
+                <h3 id="nthitem">N-th Item</h3>
+                <p>Returns the item at the specified index.</p>
+                <p>Can also be used to replace the value at the selected index.</p>
+                <p><b>Note:</b> The new value must match the array's data type.</p>
+
+                <h3 id="arraylength">Length</h3>
+                <p>Returns the total number of items stored in the array.</p>
+
+                <h3 id="randomitem">Random Item</h3>
+                <p>Returns a random item from the array.</p>
+
+                <h3 id="existinthe">Exist in the N-th Item</h3>
+                <p>Checks whether the specified index contains a valid value.</p>
+
+                <p><b>Example:</b></p>
+                </pre>
+                <span class="synArray">{</span>
+                    <span class="synNumber">2</span>,
+                    <span class="synNumber">6</span>
+                <span class="synArray">}</span>
+                </pre>
+
+                <p>Exist in the N-th Item (1)</p>
+                <p>Result: <span class="booleantrue">True</span></p>
+
+                <p>Exist in the N-th Item (5)</p>
+                <p>Result: <span class="booleanfalse">False</span></p>
+
+                <h3 id="findindex">Find Index</h3>
+                <p>Returns the index of the specified item.</p>
+                <p>If multiple items have the same value, only the first matching index is returned.</p>
+
+                <p><b>Example:</b></p>
+                </pre>
+                <span class="synArray">{</span>
+                    <span class="synNumber">2</span>,
+                    <span class="synNumber">6</span>,
+                    <span class="synNumber">10</span>,
+                    <span class="synNumber">7</span>,
+                    <span class="synNumber">2</span>
+                <span class="synArray">}</span>
+                </pre>
+
+                <p>Find Index(<span class="synNumber">2</span>)</p>
+                <p>Result: <span class="synNumber">1</span></p>
+
+                <p><b>Note:</b> The input value must match the array's data type.</p>
+
+                <h3 id="containsornot">Contains or Not</h3>
+                <p>Checks whether the specified value exists in the array.</p>
+
+                <p>Result:
+                    <span class="booleantrue">True</span> /
+                    <span class="booleanfalse">False</span>
+                </p>
+
+                <p><b>Note:</b> The input value must match the array's data type.</p>
+
+                <h2>Number Array Properties</h2>
+
+                <h3 id="maxval">Maximum Value</h3>
+                <p>Returns the largest number stored in the array.</p>
+                <p><b>Note:</b> This property does <span class="warn">not</span> change the array's maximum size.</p>
+
+                <h3 id="minval">Minimum Value</h3>
+                <p>Returns the smallest number stored in the array.</p>
+
+                <h3 id="aveval">Average Value</h3>
+                <p>Returns the average of all numbers in the array.</p>
+
+                <p><b>Example:</b></p>
+                <pre>
+                <span class="synArray">{</span>
+                    <span class="synNumber">2</span>,
+                    <span class="synNumber">10</span>,
+                    <span class="synNumber">6</span>
+                <span class="synArray">}</span>
+                </pre>
+
+                <p>Result: <span class="synNumber">6</span></p>
+
+                <h3 id="sum">Sum</h3>
+                <p>Returns the sum of all numbers in the array.</p>
+
+                <p><b>Example:</b></p>
+                <pre>
+                <span class="synArray">{</span>
+                    <span class="synNumber">12</span>,
+                    <span class="synNumber">6</span>
+                <span class="synArray">}</span>
+                </pre>
+
+                <p>Result: <span class="synNumber">18</span></p>
+
+                <h3 id="concatenate">Concatenate</h3>
+                <p>Joins all items into a single text using the specified separator.</p>
+
+                <p><b>Example:</b></p>
+                <pre>
+                <span class="synArray">{</span>
+                    <span class="synNumber">6</span>,
+                    <span class="synNumber">10</span>,
+                    <span class="synNumber">9</span>,
+                    <span class="synNumber">2</span>
+                <span class="synArray">}</span>
+                </pre>
+
+                <p>Separator:
+                    <span class="synString">"hi"</span>
+                </p>
+
+                <p>Result:
+                    <span class="synString">"6hi10hi9hi2"</span>
+                </p>
+
+                <h2 id="renamedprop">Renamed Properties</h2>
+
+                <ul>
+                    <li><b>Boolean / Image</b><br>Exist in the N-th Item → At N</li>
+                    <li><b>Player / Object</b><br>Random Item → 1 Randomly</li>
+                </ul>
+
+                <h2>Notes</h2>
+
+                <p><b>Note:</b> Array size cannot be increased automatically through scripting.</p>
+
+                <p><b>Note:</b> Most array types are only available through Global, Player, or Object Variables.</p>
+
+                <p><b>Note:</b> Local Variables currently support only Text Array (using String.Cut()) and Player Array (using the All Player expression).</p>
+
+                <p><b>Note:</b> Model Array currently has no accessible properties.</p>
             </div>
 
             <div id="Commands" class="page"> 
