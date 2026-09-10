@@ -88,6 +88,13 @@
                     <button onclick="scrollto('concatenate','array')">Concatenate[Number Array]</button>
                     <button onclick="scrollto('renamedprop','array')">Renamed Properties</button>
                  </div>
+                 <button onclick="show('vector','vectordropdown')">Vector</button>
+                 <div id="vectordropdown" class="dropdownButton" style="display: none;">
+                    <button onclick="scrollto('xyz','vector')">X / Y /Z</button>
+                    <button onclick="scrollto('length','vector')">Vector Length</button>
+                    <button onclick="scrollto('normalize','vector')"></button>
+                    <button onclick="scrollto('anglebetween','vector')">angle between</button>
+                 </div>
                  <h3>•Script fundamentals•</h3>
                  <button onclick="show('Commands','commanddropdown')"><img src="icon/script.png" class="ButtonSIcon">Commands</button>
                  <div id="commanddropdown" class="dropdownButton" style="display: none;">
@@ -617,6 +624,75 @@
                 <button onclick="scrollto('allplayer','Expression')">See All Player</button>
 
                 <p><b>Note:</b> Model Array currently has no accessible properties.</p>
+            </div>
+
+            <div id="vector" class="page">
+                <h1>Vector</h1>
+
+                <p>
+                    Vectors represent a point, direction, or magnitude in 2D or 3D space using two (X, Y) or three (X, Y, Z) numeric components.
+                </p>
+
+                <h1>Properties</h1>
+
+                <h2 id="length">Length</h2>
+                <p>Returns the magnitude (distance from the origin) of the vector.</p>
+
+                <p><b>How it works:</b> Length uses the Pythagorean theorem, extended to 2D/3D. Each component is squared, summed together, then square-rooted:</p>
+
+                <pre>
+            Length = √(X² + Y² + Z²)
+                </pre>
+
+                <p><b>Note:</b> For Vector2, the formula omits the Z component: <code>√(X² + Y²)</code></p>
+
+                <p><b>Example:</b></p>
+                <pre>
+                <span class="synVector">Vector2(</span><span class="synNumber">2</span>, <span class="synNumber">2</span><span class="synVector">)</span>
+                </pre>
+                <p>Length = √(2² + 2²) = √8 ≈ <span class="synNumber">2.83</span></p>
+
+                <pre>
+                <span class="synVector">Vector3(</span><span class="synNumber">200</span>, <span class="synNumber">200</span>, <span class="synNumber">200</span><span class="synVector">)</span>
+                </pre>
+                <p>Length = √(200² + 200² + 200²) = √120000 ≈ <span class="synNumber">346.41</span></p>
+
+                <p><b>Used for:</b> distance measurement, speed calculation (length of a velocity vector), and as the divisor when normalizing a vector.</p>
+
+                <h2 id="normalize">Normalize</h2>
+                <p>Returns a vector with the same direction as the original, but with its Length scaled down to exactly 1.</p>
+
+                <p><b>How it works:</b> Each component is divided by the vector's own Length:</p>
+
+                <pre>
+            Normalize = Vector / Length
+                </pre>
+
+                <p><b>Example:</b></p>
+                <pre>
+                <span class="synVector">Vector2(</span><span class="synNumber">2</span>, <span class="synNumber">2</span><span class="synVector">)</span>, Length = <span class="synNumber">2.83</span>
+                </pre>
+                <p>Normalize = (2/2.83, 2/2.83) ≈ (<span class="synNumber">0.71</span>, <span class="synNumber">0.71</span>)</p>
+
+                <pre>
+                <span class="synVector">Vector3(</span><span class="synNumber">200</span>, <span class="synNumber">200</span>, <span class="synNumber">200</span><span class="synVector">)</span>, Length = <span class="synNumber">346.41</span>
+                </pre>
+                <p>Normalize = (200/346.41, 200/346.41, 200/346.41) ≈ (<span class="synNumber">0.58</span>, <span class="synNumber">0.58</span>, <span class="synNumber">0.58</span>)</p>
+
+                <p><b>Note:</b> Since the vector is scaled to Length 1, Normalize only preserves <b>direction</b>, not magnitude. This is commonly used for movement direction, where only "which way" matters, not "how far."</p>
+
+                <h2 id="anglebetween">Angle Between Vector</h2>
+                <p>Returns the angle (in degrees) between two vectors, based on their direction only, not their length.</p>
+
+                <p><b>Note:</b> Two vectors that point in the exact same direction (collinear/parallel) will always return <span class="synNumber">0°</span>, even if their lengths are different.</p>
+
+                <p><b>Example:</b></p>
+                <pre>
+                <span class="synVector">Vector2(</span><span class="synNumber">2</span>, <span class="synNumber">2</span><span class="synVector">)</span> vs <span class="synVector">Vector2(</span><span class="synNumber">12</span>, <span class="synNumber">12</span><span class="synVector">)</span>
+                </pre>
+                <p>Result: <span class="synNumber">0°</span> — same direction, different length only.</p>
+
+                <p><b>Note:</b> To get a non-zero angle, compare vectors that actually point in different directions, e.g. <code>Vector2(2,2)</code> vs <code>Vector2(2,-2)</code>.</p>
             </div>
 
             <div id="Commands" class="page"> 

@@ -383,6 +383,14 @@ p {
     color : #ffffff;
 }
 
+.synVector {
+    max-width: 120px;
+    max-height: 30px;
+    background-color: #211f22;
+    font-weight: bold;
+    border: 2px solid #e1f1ff;
+}
+
 .demoVideo{
     width:100%;
     max-width:700px;
