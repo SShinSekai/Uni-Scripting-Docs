@@ -129,7 +129,10 @@
                  <button onclick="show('Expression')"><img src="icon/script.png" class="ButtonSIcon">Expression</button>
                  <div id="expressiondropdown" class="dropdownButton" style="display: none;">
                     <button onclick="scrollto('currentplayer','Expression')">Current Player</button>
-                    
+                    <button onclick="scrollto('getworldobj','Expression')">Get World Object</button>
+                    <button onclick="scrollto('self','Expression')">Self</button>
+                    <button onclick="scrollto('system','Expression')">System</button>
+                    <button onclick="scrollto('allplayer','Expression')">All Player</button>
                  </div>
 
                  <h3>•Variable•</h3>
@@ -609,7 +612,7 @@
 
                 <p><b>Note:</b> Most array types are only available through Global, Player, or Object Variables.</p>
 
-                <p><b>Note:</b> Local Variables currently support only Text Array (using String.Cut()) and Player Array (using the All Player expression).</p>
+                <p><b>Note:</b> Local Variables currently support only Text Array (<button onclick="scrollto('cut','string')">‣ Cut/Split</button>) and Player Array (using the All Player expression).</p>
 
                 <p><b>Note:</b> Model Array currently has no accessible properties.</p>
             </div>
@@ -790,18 +793,18 @@
                 <p>used to stop all active script</p>
             </div>
             <div id="Expression" class="page">
-                <h1>Current Player</h1>
+                <h1 id="currentplayer">Current Player</h1>
                 <p>Returns the player currently using the UI. This expression is commonly used to access player-related data such as name, character, inventory, and custom player values.</p>
                 <p>this block same as player block and player block only can get from an event who return player like button UI when button clicked</p>
                 <p>Note: This expression can only access inside UI scripts.</p>
 
-                <h1>Get World Object</h1>
+                <h1 id="getworldobj">Get World Object</h1>
                 <p>Returns a reference to a 3D world object or a 2D UI object. This expression is commonly used to access object properties, and components.</p>
                 <p>It can be used to interact with existing objects in the world or retrieve components attached to an object.</p>
 
-                <h1>Self</h1>
+                <h1 id="self">Self</h1>
                 <p>Returns the object that owns or executes the current script.</p>
-                <h1>System</h1>
+                <h1 id="system">System</h1>
                 <p>Returns the system object, which provides access to built-in engine features and APIs.</p>
                 <h2>Properties</h2>
                 <p>System properties is a lighting system and enviroment</p>
@@ -959,7 +962,7 @@
                 </div>
 
 
-                <h1>All Players</h1>
+                <h1 id="allplayer">All Players</h1>
                 <p>Returns a collection containing all players currently in the same server.</p>
                 <p>Useful for multiplayer features such as broadcasting messages, looping through players, or applying actions to every player in the game.</p>
                 <p>type:<b>array</b></p>
