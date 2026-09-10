@@ -384,17 +384,22 @@ p {
 }
 
 .synVector {
-    max-width: 120px;
-    max-height: 30px;
-    background-color: #211f22;
+    display: inline-block;
+    background: linear-gradient(135deg, #3E434A, #494E59);
+    border: 2px solid;
+    border-image: linear-gradient(135deg, #21B2A6, #26D8D2) 1;
+    border-radius: 6px;
+    padding: 4px 12px;
     font-weight: bold;
-    border: 2px solid #e1f1ff;
+    font-family: monospace;
+    color: #ffffff;
 }
 
 .synVectorBox {
     display: inline-block;
-    background-color: #4a4d5a;
-    border: 2px solid #5eead4;
+    background: linear-gradient(135deg, #3E434A, #494E59);
+    border: 2px solid;
+    border-image: linear-gradient(135deg, #21B2A6, #26D8D2) 1;
     border-radius: 6px;
     padding: 4px 12px;
     font-weight: bold;
