@@ -126,7 +126,7 @@
                     <button onclick="scrollto('break','Logic')">‣ Break</button>
                     <button onclick="scrollto('stopallscript','Logic')">‣ Stop all Script</button>
                  </div>
-                 <button onclick="show('Expression')"><img src="icon/script.png" class="ButtonSIcon">Expression</button>
+                 <button onclick="show('Expression','expressiondropdown')"><img src="icon/script.png" class="ButtonSIcon">Expression</button>
                  <div id="expressiondropdown" class="dropdownButton" style="display: none;">
                     <button onclick="scrollto('currentplayer','Expression')">Current Player</button>
                     <button onclick="scrollto('getworldobj','Expression')">Get World Object</button>
@@ -612,7 +612,9 @@
 
                 <p><b>Note:</b> Most array types are only available through Global, Player, or Object Variables.</p>
 
-                <p><b>Note:</b> Local Variables currently support only Text Array (<button onclick="scrollto('cut','string')">‣ Cut/Split</button>) and Player Array (using the All Player expression).</p>
+                <p><b>Note:</b> Note: Local Variables currently support only Text Array (using String.Cut()) and Player Array (using the All Player expression)</p>
+                <button onclick="scrollto('cut','string')">See Cut/Split</button>
+                <button onclick="scrollto('allplayer','Expression')">See All Player</button>
 
                 <p><b>Note:</b> Model Array currently has no accessible properties.</p>
             </div>
