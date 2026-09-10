@@ -392,10 +392,14 @@ p {
 }
 
 .synVectorBox {
-    border: 1px solid #e1f1ff;
-    border-radius: 4px;
-    padding: 2px 8px;
     display: inline-block;
+    background-color: #4a4d5a;
+    border: 2px solid #5eead4;
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-weight: bold;
+    font-family: monospace;
+    color: #ffffff;
 }
 
 .demoVideo{
