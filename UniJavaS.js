@@ -49,3 +49,8 @@ function toggleinfo(infoid){
         info.style.display = "none"
     }
 }
+
+function toggleSidebar(){
+    document.getElementById('sidebar').classList.toggle('sidebar-closed');
+    document.getElementById('backdrop').classList.toggle('active');
+}

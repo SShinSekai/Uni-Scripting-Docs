@@ -32,12 +32,66 @@ p {
 }
 
 .sidebar {
+    transition: 0.3s ease;
     width: 250px;
     max-height: 100vh;
     padding: 20px;
     overflow-y: auto;
     top:0;
     border-right: 2px solid #2c1c4252;
+}
+
+.sidebar-closed {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+    border-right: none;
+}
+
+#sidebarToggle {
+    background: transparent;
+    border: 2px solid #9ac5ff4f;
+    color: white;
+    font-size: 20px;
+    padding: 8px 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#backdrop {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 250px;
+        z-index: 99;
+        transform: translateX(0);
+        background: #190927;
+    }
+
+    .sidebar-closed {
+        transform: translateX(-100%);
+        width: 250px; /* tetep 250px, yang gerak posisinya bukan width-nya */
+        padding: 20px; /* balikin lagi biar isinya gak collapse pas di-translate */
+    }
+
+    #backdrop.active {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.6);
+        z-index: 98;
+    }
+
+    .content {
+        max-width: 100%;
+    }
 }
 
 .sidebar::-webkit-scrollbar {

@@ -7,10 +7,11 @@
     </head>
     <body>
         <div class="webname">
-    <h1>
-        UNI Scripting
-        <span class="Title">Documentation</span>
-    </h1>
+            <button id="sidebarToggle" onclick="toggleSidebar()">☰</button>
+         <h1>
+            UNI Scripting
+                <span class="Title">Documentation</span>
+        </h1>   
 
     <div class="tools">
         <!--Un avvaible cek folder oi-->
@@ -24,10 +25,11 @@
             <img src="icon/report.png" class="ButtonIcon">Report
         </button>-->
     </div>
-</div>
+        </div>
        
             <!-- SIDEBAR -->
         <div class="container">
+             <div id="backdrop" onclick="toggleSidebar()"></div>
              <div class="sidebar">
                 <h3>•Base•</h3>
                  <button onclick="show('introduction')"><img src="icon/Basic.png" class="ButtonSIcon">introduction</button>
