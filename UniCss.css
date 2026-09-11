@@ -77,8 +77,8 @@ p {
 
     .sidebar-closed {
         transform: translateX(-100%);
-        width: 250px; /* tetep 250px, yang gerak posisinya bukan width-nya */
-        padding: 20px; /* balikin lagi biar isinya gak collapse pas di-translate */
+        width: 250px;
+        padding: 20px;
     }
 
     #backdrop.active {
