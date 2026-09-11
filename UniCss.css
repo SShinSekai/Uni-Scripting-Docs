@@ -196,11 +196,11 @@ p {
 }
 
 .content {
-    width: 100%;
+    width: 1800px;
+    max-width: 100%;
     padding: 10px;
     flex: 1;
     overflow-y: auto;
-    max-width:1800px;
     background: linear-gradient(to bottom, #190927,
     #145364);
     
