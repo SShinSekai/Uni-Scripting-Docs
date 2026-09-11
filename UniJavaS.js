@@ -1,5 +1,11 @@
 let lastShow = localStorage.getItem("lastShow") || "introduction";
 
+window.addEventListener('DOMContentLoaded', () => {
+    if (window.innerWidth <= 768) {
+        document.getElementById('sidebar').classList.add('sidebar-closed');
+    }
+});
+
 function showdorpdownbutton(id){
    if(id){
     let dropdowngroup = document.getElementById(id);
