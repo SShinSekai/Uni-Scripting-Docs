@@ -49,8 +49,9 @@ p {
 }
 
 #sidebarToggle {
-    background: transparent;
-    border: 2px solid #9ac5ff4f;
+    background: #0f0c11;
+    border: 2px solid #bd9aff4f;
+    border-bottom: 2px solid #bd9aff4f;
     color: white;
     font-size: 20px;
     padding: 8px 14px;
