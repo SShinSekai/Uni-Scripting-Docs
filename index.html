@@ -627,87 +627,80 @@
             </div>
 
             <div id="vector" class="page">
-                <h1>Vector</h1>
+            <h1>Vector</h1>
 
-                <p>
-                    Vectors represent a point, direction, or magnitude in 2D or 3D space using two (X, Y) or three (X, Y, Z) numeric components.
-                </p>
+            <p>
+                Vectors represent a point, direction, or magnitude in 2D or 3D space using two (X, Y) or three (X, Y, Z) numeric components.
+            </p>
 
-                <h1>Properties</h1>
+            <p><b>Vector3</b> is used for 3D world objects (Parts) — for example in Position, Rotation, and Size properties.</p>
 
-                <h2 id="xyz">X / Y / Z</h2>
-                <p>Returns the value of the specified axis component.</p>
-                <p>Can also be used to set/replace the value of that axis.</p>
+            <p><b>Vector2</b> is used for 2D/UI objects (Images) — for example in Position and Size properties.</p>
 
-                <p><b>Note:</b> Vector2 only has <b>X</b> and <b>Y</b>. Vector3 has <b>X</b>, <b>Y</b>, and <b>Z</b>.</p>
+            <h1>Properties</h1>
 
-                <p><b>Example:</b></p>
-                <pre>
-                <span class="synArray">Vector3(</span><span class="synNumber">200</span>, <span class="synNumber">200</span>, <span class="synNumber">200</span><span class="synArray">)</span>
-                </pre>
-                <p>X → <span class="synNumber">200</span></p>
-                <p>Y → <span class="synNumber">200</span></p>
-                <p>Z → <span class="synNumber">200</span></p>
+            <h2 id="xyz">X / Y / Z</h2>
+            <p>Returns the value of the specified axis component.</p>
+            <p>Can also be used to set/replace the value of that axis.</p>
 
-                <h2 id="length">Length</h2>
-                <p>Returns the magnitude (distance from the origin) of the vector.</p>
+            <p><b>Example:</b></p>
+            <pre>
+            <span class="synVectorBox">Vector3(200, 200, 200)</span>
+            </pre>
+            <p><b>Result:</b></p>
+            <p>X → <span class="synNumber">200</span></p>
+            <p>Y → <span class="synNumber">200</span></p>
+            <p>Z → <span class="synNumber">200</span></p>
 
-                <p><b>How it works:</b> Length uses the Pythagorean theorem, extended to 2D/3D. Each component is squared, summed together, then square-rooted:</p>
+            <p><b>Note:</b> Vector2 only has <b>X</b> and <b>Y</b>. Vector3 has <b>X</b>, <b>Y</b>, and <b>Z</b>.</p>
 
-                <pre>
-            Length = √(X² + Y² + Z²)
-                </pre>
+            <h2 id="length">Length</h2>
+            <p>Returns the magnitude (distance from the origin) of the vector.</p>
 
-                <p><b>Note:</b> For Vector2, the formula omits the Z component: <code>√(X² + Y²)</code></p>
+            <p><b>Example:</b></p>
+            <pre>
+            <span class="synVectorBox">Vector2(2, 2)</span>
+            </pre>
+            <p><b>Result:</b> √(2² + 2²) = √8 ≈ <span class="synNumber">2.83</span></p>
 
-                <p><b>Example:</b></p>
-                <pre>
-                <span class="synVectorBox">Vector2(2, 2)</span>
-                </pre>
-                <p>Length = √(2² + 2²) = √8 ≈ <span class="synNumber">2.83</span></p>
+            <pre>
+            <span class="synVectorBox">Vector3(200, 200, 200)</span>
+            </pre>
+            <p><b>Result:</b> √(200² + 200² + 200²) = √120000 ≈ <span class="synNumber">346.41</span></p>
 
-                <pre>
-                    <span class="synVectorBox">Vector3(200, 200, 200)</span>
-                </pre>
-                <p>Length = √(200² + 200² + 200²) = √120000 ≈ <span class="synNumber">346.41</span></p>
+            <p><b>Note:</b> Length uses the Pythagorean theorem extended to 2D/3D — each component is squared, summed, then square-rooted: <code>Length = √(X² + Y² + Z²)</code>. For Vector2, the formula omits Z: <code>√(X² + Y²)</code>. Also used for distance measurement, speed calculation (length of a velocity vector), and as the divisor when normalizing a vector.</p>
 
-                <p><b>Used for:</b> distance measurement, speed calculation (length of a velocity vector), and as the divisor when normalizing a vector.</p>
+            <h2 id="normalize">Normalize</h2>
+            <p>Returns a vector with the same direction as the original, but with its Length scaled down to exactly 1.</p>
 
-                <h2 id="normalize">Normalize</h2>
-                <p>Returns a vector with the same direction as the original, but with its Length scaled down to exactly 1.</p>
+            <p><b>Example:</b></p>
+            <pre>
+            <span class="synVectorBox">Vector2(2, 2)</span>
+            </pre>
+            <p><b>Result:</b> (2/2.83, 2/2.83) ≈ (<span class="synNumber">0.71</span>, <span class="synNumber">0.71</span>)</p>
 
-                <p><b>How it works:</b> Each component is divided by the vector's own Length:</p>
+            <pre>
+            <span class="synVectorBox">Vector3(200, 200, 200)</span>
+            </pre>
+            <p><b>Result:</b> (200/346.41, 200/346.41, 200/346.41) ≈ (<span class="synNumber">0.58</span>, <span class="synNumber">0.58</span>, <span class="synNumber">0.58</span>)</p>
 
-                <pre>
-            Normalize = Vector / Length
-                </pre>
+            <p><b>Note:</b> Each component is divided by the vector's own Length: <code>Normalize = Vector / Length</code>. Since the result is scaled to Length 1, Normalize only preserves <b>direction</b>, not magnitude. Commonly used for movement direction, where only "which way" matters, not "how far."</p>
 
-                <p><b>Example:</b></p>
-                <pre>
-                <span class="synVectorBox">Vector2(2, 2)</span>
-                </pre>
-                <p>Normalize = (2/2.83, 2/2.83) ≈ (<span class="synNumber">0.71</span>, <span class="synNumber">0.71</span>)</p>
+            <h2 id="anglebetween">Angle Between Vector</h2>
+            <p>Returns the angle (in degrees) between two vectors, based on their direction only, not their length.</p>
 
-                <pre>
-                    <span class="synVector">Vector3(200, 200, 200)</span>
-                </pre>
-                <p>Normalize = (200/346.41, 200/346.41, 200/346.41) ≈ (<span class="synNumber">0.58</span>, <span class="synNumber">0.58</span>, <span class="synNumber">0.58</span>)</p>
+            <p><b>Example:</b></p>
+            <pre>
+            <span class="synVectorBox">Vector2(2, 2) VS Vector2(2, -2)</span>
+            </pre>
+            <p><b>Result:</b> <span class="synNumber">90°</span> — the two vectors point in genuinely different directions.</p>
 
-                <p><b>Note:</b> Since the vector is scaled to Length 1, Normalize only preserves <b>direction</b>, not magnitude. This is commonly used for movement direction, where only "which way" matters, not "how far."</p>
-
-                <h2 id="anglebetween">Angle Between Vector</h2>
-                <p>Returns the angle (in degrees) between two vectors, based on their direction only, not their length.</p>
-
-                <p><b>Note:</b> Two vectors that point in the exact same direction (collinear/parallel) will always return <span class="synNumber">0°</span>, even if their lengths are different.</p>
-
-                <p><b>Example:</b></p>
-                <pre>
-                <span class="synVectorBox">Vector2(2, 2) VS Vector2(12,12)</span> 
-                </pre>
-                <p>Result: <span class="synNumber">0°</span> — same direction, different length only.</p>
-
-                <p><b>Note:</b> To get a non-zero angle, compare vectors that actually point in different directions, e.g. <code>Vector2(2,2)</code> vs <code>Vector2(2,-2)</code>.</p>
-            </div>
+            <p><b>Note:</b> Two vectors that point in the exact same direction (collinear/parallel) will always return <span class="synNumber">0°</span>, even if their lengths are different. Example:</p>
+            <pre>
+            <span class="synVectorBox">Vector2(2, 2) VS Vector2(12, 12)</span>
+            </pre>
+            <p>Result: <span class="synNumber">0°</span> — same direction, different length only.</p>
+        </div>
 
             <div id="Commands" class="page"> 
                 <h1 id="print">Debug.print</h1>
