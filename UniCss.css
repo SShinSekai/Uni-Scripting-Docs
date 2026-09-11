@@ -64,11 +64,16 @@ p {
 }
 
 @media (max-width: 768px) {
+    .webname {
+        position: relative;
+        z-index: 100; /* lebih tinggi dari sidebar (99) */
+    }
+
     .sidebar {
         position: fixed;
-        top: 0;
+        top: 100px; /* nurunin start position, sesuai height .webname */
         left: 0;
-        height: 100vh;
+        height: calc(100vh - 100px); /* biar gak nembus ke bawah viewport */
         width: 250px;
         z-index: 99;
         transform: translateX(0);
@@ -84,7 +89,10 @@ p {
     #backdrop.active {
         display: block;
         position: fixed;
-        inset: 0;
+        top: 100px; /* backdrop juga mulai dari bawah header */
+        left: 0;
+        right: 0;
+        bottom: 0;
         background: rgba(0,0,0,0.6);
         z-index: 98;
     }
