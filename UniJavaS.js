@@ -18,6 +18,16 @@ function showdorpdownbutton(id){
    }
 }
 
+function toggleChangelogTabs(){
+    let ChangelogTab = document.getElementById("ChangeLogTab")
+    if (ChangelogTab.style.display === "none"){
+        ChangelogTab.style.display = "block"
+    }else{
+         ChangelogTab.style.display = "none"
+    }
+    console.log(ChangelogTab.style.display)
+}
+
 function show(page,id) {
 
     let sections = document.querySelectorAll('.content > div');

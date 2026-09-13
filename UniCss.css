@@ -51,7 +51,7 @@ p {
 #sidebarToggle {
     background: #0f0c11;
     border: 2px solid #bd9aff4f;
-    border-bottom: 2px solid #bd9aff4f;
+    border-bottom: 4px solid #bd9aff4f;
     color: white;
     font-size: 20px;
     padding: 8px 14px;
@@ -68,6 +68,10 @@ p {
     .webname {
         position: relative;
         z-index: 100; /* lebih tinggi dari sidebar (99) */
+    }
+
+    .webname h1 {
+        display: none;
     }
 
     .sidebar {
@@ -124,6 +128,131 @@ p {
 
 .sidebar h3 {
     text-align: center;
+}
+
+.ChangeLogTabs {
+    width: 800px;
+    max-width: 90vw;
+    height: 420px;
+    max-height: 80vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to bottom, #140927f5, #280f50f5);
+    border: 3px solid #570091c5;
+    border-radius: 6px;
+    box-shadow: 0 0 20px #42086bd2;
+    align-items: center;
+    transition: 0.23s;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-y: auto;
+    z-index: 200;
+}
+
+.visitbutton{
+    margin-top: 20px;
+    background:#0a5f748f;
+    border: 2px solid #1497b8b7;
+    color: #ffffff;
+    max-width: 240px;
+    max-height: 40px;
+    height: 25px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.visitbutton:hover{
+    z-index: 110;
+    transform: translateY(-8px);
+    box-shadow:0 0 15px #1497b857;
+    border-bottom: 6px solid #1497b8b7;
+    transition: 0.5s;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.ChangeLogTabs h1{
+    background-color: #32185f75;
+    color: #ffffff;
+}
+
+.ChangeLogTabs h3{
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.ChangeLogTabs p{
+    padding-left: 25%;
+    text-align: left;
+    margin: 2px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.ChangeLogTabs pre{
+    background-color: #0d0c11a8;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.toggleLogButton {
+    background: #280f50a2;
+    border: 2px solid #3c2b58;
+    height: 40px;
+    width: 200px;
+    color: #f7f3ff;
+    align-items: end;
+    font-size:medium;
+    font-weight: bold;
+    transition: 0.2s;
+    font-family: Arial, sans-serif;
+}
+
+.ChgHeaders {
+    position: relative;
+    z-index: 111;
+    background: #21093dc7;
+    align-items: end;
+    text-align: end;
+    width: 100%;
+    height: 40px;
+    border-radius: 6px;
+}
+
+.toggleLogButton:hover {
+    border: 2px solid #4e3970;
+    border-bottom: 5px solid #4e3970;
+    cursor: pointer;
+    width: 220px;
+    transition: 0.2s;
+    box-shadow:0 0 10px #1891b34f;
+}
+
+.ChangeLogTabs:hover {
+    background: linear-gradient(to bottom, #140927, #280f50);
+    box-shadow: 0 0 30px #660da7e7 ;
+    border: 3px solid #7915bbc5;
+    transition: 0.4s;
+}
+
+.ChangeLogTabs::-webkit-scrollbar {
+    width: 8px;
+    transition: 0.5s;
+}
+
+.ChangeLogTabs::-webkit-scrollbar-track {
+    background: #8860d33f;
+    border-radius: 4px;
 }
 
 .sidebar button {
@@ -310,22 +439,21 @@ p {
 }
 
 .tools button {
-    background: #2e0f3a;
+    background: #0f0c11;
+    border: 2px solid #bd9aff4f;
+    border-bottom: 6px solid #bd9aff4f;
     color: #ffffff;
-
-    border: 2px solid #25063b;
 
     padding: 10px 18px;
     width: 140px;
     height: 80px;
     padding: 10px;
 
-    border-radius: 2px;
+    border-radius: 4px;
 
     font-size: 15px;
     font-weight: bold;
     text-align: left;
-    background: #1f192e;
 
     cursor: pointer;
     display: flex;
@@ -335,7 +463,9 @@ p {
 }
 
 .tools button:hover{
-    border: 2px solid #310072;
+    border: 2px solid #8427ff50;
+    border-top: 6px solid #8427ff50;
+    border-bottom: 2px solid #8427ff50;
     transform: translateY(5px);
     text-decoration: underline;
     text-decoration-color: #ffffff;
@@ -347,6 +477,7 @@ p {
      width: 45px;
     height: 45px;
 }
+
 .webname h3 {
     color :#9f98b4;
     text-align: left;

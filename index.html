@@ -25,6 +25,7 @@
         <button onclick="show('report')">
             <img src="icon/report.png" class="ButtonIcon">Report
         </button>-->
+        <button onclick="toggleChangelogTabs()"><img src="icon/report.png" class="ButtonIcon">Change Log</button>
     </div>
         </div>
        
@@ -149,6 +150,36 @@
                  <h3>•Variable•</h3>
                  <button onclick="show('variables')"><img src="icon/Variable.png" class="ButtonSIcon">Variables</button>
              </div>
+
+             <div id="ChangeLogTab" class="ChangeLogTabs" style="display: none;" >
+                <div id="chgLogHeaders" class="ChgHeaders" style="display: block;">
+                    <button onclick="toggleChangelogTabs()" class="toggleLogButton">Close Tab </button>
+                </div>
+
+                <h1>Update 0.7 13/09/2026</h1>
+                <h3>Update log:</h3>
+                <p>Added Change log for update information</p>
+
+                <h1>Update 0.6.3 11/09/2026</h1>
+                <h3>Update log:</h3>
+                <p>Fix Some Bugs in Mobile UI</p>
+
+                <h1>Update 0.6 11/09/2026</h1>
+                <p>Added Mobile UI</p>
+
+                <h1>Update 0.5 10/09/2026</h1>
+                <h3>Update log:</h3>
+                <p>1.Vector section (New):</p>
+                <p>* Properties X/Y/Z</p>
+                <p>* Length</p>
+                <p>* Normalize</p>
+                <p>* Angle between vector</p>
+                <p>2.Array section - Heading restructure</p>
+                <p>3.Dropdown button for expression section</p>
+                <button onclick="show('vector','vectordropdown')" class="visitbutton">Visit Vector section→</button>
+                <button onclick="show('array','arraydropdown')" class="visitbutton">Visit Array section→</button>
+                <button onclick="show('Expression','expressiondropdown')" class="visitbutton">Visit Expression section→</button>
+             </div>
              
              <div class="content">
 
@@ -161,7 +192,7 @@
                 <h3>What is this website?</h3>
                 <p>This documentation contains community-made explanations, examples, and references for Uni scripting features.</p>
                 <h3>Disclaimer</h3>
-                <p>This documentation is based on personal experience and testing. Some information may be incomplete, outdated, or differ after platform updates,
+                <p>This documentation is based on personal experience and testing. Some information may be incomplete, incorrect, outdated, or differ after platform updates,
                     also we only include a scriptable properties</p>
                 <h3>Report an Issue</h3>
                 <P>Found incorrect information or missing documentation? Please submit a report.</P>
@@ -188,7 +219,7 @@
                 <p>in object properties scrool down until you see "When broadcast recieve" event if not found it click point three button in the top of properties tab
                     then activated the broadcast recieve event
                 </p>
-                <p>Parameters only can be access if you set the parameters when created the broadcast script cant change the parameters type</p>
+                <p>Parameters only can be access if you set the parameters when created the broadcast script</p>
                 <h2>Sender</h2>
                 <p>an object who send the broadcast</p>
 
@@ -637,9 +668,9 @@
                 Vectors represent a point, direction, or magnitude in 2D or 3D space using two (X, Y) or three (X, Y, Z) numeric components.
             </p>
 
-            <p><b>Vector3</b> is used for 3D world objects (Parts) — for example in Position, Rotation, and Size properties.</p>
+            <p><b>Vector3</b> is used for 3D world objects — for example in Position, Rotation, and Size properties.</p>
 
-            <p><b>Vector2</b> is used for 2D/UI objects (Images) — for example in Position and Size properties.</p>
+            <p><b>Vector2</b> is used for 2D/UI objects — for example in Position and Size properties.</p>
 
             <h1>Properties</h1>
 
