@@ -28,6 +28,15 @@ function toggleChangelogTabs(){
     console.log(ChangelogTab.style.display)
 }
 
+function toggleFaqTab(){
+    let FaqTab = document.getElementById("FaqTab")
+    if (FaqTab.style.display === "block"){
+        FaqTab.style.display = "none"
+    }else{
+        FaqTab.style.display = "block"
+    }
+}
+
 function show(page,id) {
 
     let sections = document.querySelectorAll('.content > div');

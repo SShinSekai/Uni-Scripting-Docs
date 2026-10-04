@@ -151,6 +151,199 @@ p {
     z-index: 200;
 }
 
+/*.FaqClassTab {
+    width: 1200px;
+    max-width: 130vw;
+    height: 540px;
+    max-height: 100vw;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: linear-gradient(to bottom, #270957, #140927);
+
+    border-radius: 6px;
+    border: 3px solid #140927ab;
+
+    z-index: 201;
+    align-items: center;
+
+    
+    overflow: hidden;
+}
+
+.FaqClassTab::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(to bottom, #320d6d, #140927);
+
+    opacity: 0;
+    transition: opacity 0.2s linear;
+
+    pointer-events: none;
+}
+
+.FaqClassTab:hover::before {
+    opacity: 1;
+}
+
+
+.FaqClassTab > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+.FaqClassTab {
+    transition: transform 0.2s linear;
+}
+
+.FaqClassTab:hover {
+    transform: translate(-50%, -50%) scale(1.02);
+    cursor: pointer;
+}*/
+
+.FaqHeaderClass {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: #37005fc5;
+
+    padding: 10px 15px;
+    box-sizing: border-box;
+}
+
+.FaqSubmitButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 18px;
+
+    background: #1d0b2e;
+    border: 2px solid #912ad6c5;
+    border-radius: 6px;
+
+    color: #ffffff;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s linear,
+        border-color 0.2s linear,
+        transform 0.2s linear;
+}
+
+.FaqSubmitButton:hover {
+    transform: translateY(6px);
+}
+
+.FaqSubmitButton:active {
+    transform: scale(0.97);
+}
+
+.FaqClassContent {
+    width: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    align-items: center;
+
+    padding: 15px;
+}
+
+.FaqClassTab {
+    width: 600px;
+    max-width: 80vw;
+    height: 640px;
+    max-height: 90w;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: linear-gradient(to bottom, #140927f5, #280f50f5);
+
+    border: 3px solid #570091c5;
+    border-radius: 6px;
+    box-shadow: 0 0 20px #4e0c85d2;
+    
+
+    align-items: center;
+    transition: 0.23s;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-y: auto;
+    z-index: 201;
+}
+
+.FaqClassTab:hover {
+    background: linear-gradient(to bottom, #140927, #280f50);
+    box-shadow: 0 0 30px #660da7e7;
+    border: 3px solid #7915bbc5;
+    transition: 0.4s;
+}
+
+.FaqClassTab button {
+    background: #360b7c79;
+    border: transparent;
+    border-left: 8px solid #571ab979;
+
+    font-weight: bold;
+    font-size: clamp(14px, 2vw, 26px);
+    line-height: 1.15;
+
+    color: #ffffff;
+
+    min-height: 30px;
+    height: auto;
+
+    width: 88%;
+    margin-top: 8px;
+
+    padding: 4px 10px;
+    box-sizing: border-box;
+
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+.FaqInfoCard {
+    color: #ffffff;
+    background:#241047ab;
+    border: 1px solid #5831b3da;
+    border-left: 4px solid #5831b3da;
+    border-radius: 4px;
+    margin-top: 8px;
+    margin-left: 65px;
+    width: 76%;
+    max-height: 430px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: left;
+    box-shadow: 0 0 15px #290d41;
+    
+}
+
+.FaqInfoCard h1{
+    color: #6842cf;
+    font-weight: bold;
+}
+
+.FaqInfoCard p{
+    color: #ffffff;
+    background: transparent;
+    font-size: large;
+}
+
 .visitbutton{
     margin-top: 20px;
     background:#0a5f748f;
@@ -430,12 +623,15 @@ p {
 
 .tools {
     width: 80%;
-    width: auto;
     display: flex;
     gap: 10px;
     background: transparent;
-     margin-left: 5px;
-     width: auto;
+    margin-left: 5px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    flex-wrap: nowrap;
 }
 
 .tools button {
@@ -460,6 +656,7 @@ p {
     align-items: center;
     gap: 8px;
     transition:0.2s;
+    flex-shrink: 0;
 }
 
 .tools button:hover{

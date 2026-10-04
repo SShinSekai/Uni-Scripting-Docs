@@ -25,9 +25,11 @@
         <button onclick="show('report')">
             <img src="icon/report.png" class="ButtonIcon">Report
         </button>-->
-        <button onclick="toggleChangelogTabs()"><img src="icon/report.png" class="ButtonIcon">Change Log</button>
+        <button onclick="toggleChangelogTabs()"><img src="icon/ChangeLog.jpeg" class="ButtonIcon">Change Log</button>
+        <button onclick="toggleFaqTab()"><img src="icon/Faq.jpeg" class="ButtonIcon" >Faq</button>
     </div>
-        </div>
+        
+    </div>
        
             <!-- SIDEBAR -->
         <div class="container">
@@ -149,12 +151,189 @@
 
                  <h3>•Variable•</h3>
                  <button onclick="show('variables')"><img src="icon/Variable.png" class="ButtonSIcon">Variables</button>
+                 <h3>•World Scene•</h3>
+                 <button onclick="show('Basepart')">BasePart</button>
              </div>
+
+             <div id="FaqTab" class="FaqClassTab" style="display: none;">
+
+                <div id="FaqHeader" class="FaqHeaderClass">
+                    <a
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSdLKszvWqgNnUTsSPv1CTzEkWrquzGfzLl13WRWnuc0Zld8yQ/viewform?usp=header"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="FaqSubmitButton"
+                    >
+                        Submit Question
+                    </a>
+                </div>
+
+                <div id="FaqContent" class="FaqClassContent">
+
+                    <button onclick="toggleinfo('WebInfo')">
+                        What is this website?
+                    </button>
+
+                    <div id="WebInfo" style="display: none;" class="FaqInfoCard">
+                        <p>
+                            This is an unofficial UNI Scripting Documentation website
+                            created to help the community learn UNI scripting more easily.
+                        </p>
+                    </div>
+
+
+                    <button onclick="toggleinfo('CreatorInfo')">
+                        Who created this website?
+                    </button>
+
+                    <div id="CreatorInfo" style="display: none;" class="FaqInfoCard">
+                        <p>
+                            This website was created and is maintained by ShinSekai.
+                        </p>
+                    </div>
+
+
+                    <button onclick="toggleinfo('OfficialInfo')">
+                        Is this an official UNI website?
+                    </button>
+
+                    <div id="OfficialInfo" style="display: none;" class="FaqInfoCard">
+                        <p>
+                            No. This is an unofficial community-made documentation website.
+                            It is not affiliated with or maintained by the official UNI team.
+                        </p>
+                    </div>
+
+
+                    <button onclick="toggleinfo('PurposeInfo')">
+                        What is the purpose of this website?
+                    </button>
+
+                    <div id="PurposeInfo" style="display: none;" class="FaqInfoCard">
+                        <p>
+                            The purpose of this website is to provide easier access to
+                            information about UNI scripting, including scriptable properties,
+                            commands, events, and other scripting-related features.
+                        </p>
+                    </div>
+
+
+                    <button onclick="toggleinfo('DocumentationInfo')">
+                        Is all information on this website official?
+                    </button>
+
+                    <div id="DocumentationInfo" style="display: none;" class="FaqInfoCard">
+                        <p>
+                            No. The documentation is based on testing, personal experience,
+                            and information available from the UNI scripting system.
+                            Some information may be incomplete, inaccurate, or outdated.
+                        </p>
+                    </div>
+
+
+                    <button onclick="toggleinfo('QuestionInfo')">
+                        Can I submit a question about the documentation?
+                    </button>
+
+                    <div id="QuestionInfo" style="display: none;" class="FaqInfoCard">
+                        <p>
+                            Yes. Use the <b>Submit Question</b> button at the top of this FAQ
+                            to send a question related to UNI scripting or this documentation
+                            website.
+                        </p>
+                    </div>
+
+
+                    <button onclick="toggleinfo('QuestionTypeInfo')">
+                        What kind of questions can I submit?
+                    </button>
+
+                    <div id="QuestionTypeInfo" style="display: none;" class="FaqInfoCard">
+                        <p>
+                            You can submit questions about the UNI scripting API,
+                            documentation, properties, commands, events, or other
+                            scripting-related information.
+                        </p>
+                    </div>
+
+
+                    <button onclick="toggleinfo('FeatureRequestInfo')">
+                        Can I request a tutorial or ask how to make a feature?
+                    </button>
+
+                    <div id="FeatureRequestInfo" style="display: none;" class="FaqInfoCard">
+                        <p>
+                            The FAQ is intended for questions about the UNI scripting API
+                            and documentation. Requests asking how to create a specific
+                            feature are not intended for this FAQ.
+                        </p>
+                    </div>
+
+
+                    <button onclick="toggleinfo('NameInfo')">
+                        Do I need to provide my name when submitting a question?
+                    </button>
+
+                    <div id="NameInfo" style="display: none;" class="FaqInfoCard">
+                        <p>
+                            No. Providing your name is optional. You may submit a question
+                            anonymously.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
 
              <div id="ChangeLogTab" class="ChangeLogTabs" style="display: none;" >
                 <div id="chgLogHeaders" class="ChgHeaders" style="display: block;">
                     <button onclick="toggleChangelogTabs()" class="toggleLogButton">Close Tab </button>
                 </div>
+                <h1>Update 0.8 04/10/2026</h1>
+                <h3>Update log:</h3>
+
+                <p>1.BasePart / Group section (New):</p>
+                <p>* Position</p>
+                <p>* World Position</p>
+                <p>* Rotation</p>
+                <p>* World Rotation</p>
+                <p>* Scale</p>
+                <p>* Forward</p>
+                <p>* Right</p>
+                <p>* Up</p>
+                <p>* Color</p>
+                <p>* Texture</p>
+                <p>* Enable Collision</p>
+                <p>* Collide With Camera</p>
+                <p>* Is Active</p>
+
+                <p>2.BasePart / Group commands:</p>
+                <p>* Destroy Self</p>
+                <p>* Send Broadcast</p>
+                <p>* Add Tag</p>
+                <p>* Remove Tag</p>
+                <p>* Has Tag</p>
+
+                <p>3.BasePart / Group documentation improvements:</p>
+                <p>* Added Parameters information for properties</p>
+                <p>* Added Use Case for Forward, Right, and Up</p>
+                <p>* Added Known Issue for Rotation</p>
+                <p>* Added Note for non-scriptable properties</p>
+                <p>* Non-scriptable properties: Tint Mode, Tiling Mode, Tiling Value</p>
+
+                <p>4.FAQ section:</p>
+                <p>* Added FAQ about the documentation website</p>
+                <p>* Added information about the website creator</p>
+                <p>* Added information about question submission</p>
+                <p>* Added information about supported question types</p>
+
+                <p>5.Number section:</p>
+                <p>* Added Note that Mathematical Operation can also be used to modify Vector values</p>
+
+                <p>6.Set block:</p>
+                <p>* Added information about "Add (+)" and "Reduce (-)"</p>
+                <p>* "Change To" can be changed to "Add" or "Reduce" when the value is a Number/Vector</p>
+                <button onclick="show('Basepart')" class="visitbutton">Visit Group section→</button>
+                <button onclick="toggleFaqTab()" class="visitbutton">Open Faq→</button>
 
                 <h1>Update 0.7 13/09/2026</h1>
                 <h3>Update log:</h3>
@@ -371,6 +550,7 @@
                 <p>mathematical operation use for modify the value.mathematical operation like summation<img src="BlockImg/summation.png" class="iconscriptblockimg">/subtraction<img src="BlockImg/substraction.png" class="iconscriptblockimg">/multiplication<img src="BlockImg/multiply.png" class="iconscriptblockimg">/divide<img src="BlockImg/divide.png" class="iconscriptblockimg"> </p>
                 <h3>Example:10+10</h3>
                 <p>result=<span class = "synNumber">20</span></p>
+                <p>Note:Mathematical Operation also can be used for modify Vector value</p>
 
                 <h1 id="pickrandom">Expression → Number → pick random</h1>
                 <img src="BlockImg/number_pickrandom.png" class="midscriptBlockImg">
@@ -750,7 +930,7 @@
                 <h1 id="set">Set</h1>
                 <img src="logicBlockimg/command_set.png" class="midscriptBlockImg">
                 <p>use to set value of variable or object property</p>
-                <p>if value is a number "change to" can be change to <b>"Reduce"(-)</b> and <b>"add"(+)</b></p>
+                <p>if value is a number/Vector "change to" can be change to <b>"Reduce"(-)</b> and <b>"add"(+)</b></p>
                 <p>Note:do not use property block if your variable type is number or string.also different object has different property check object property instead</p>
 
                 <h1 id="execute">execute</h1>
@@ -1112,6 +1292,193 @@
                 <h1>Local Variable</h1>
                 <button onclick="scrollto('createnew','Commands')">See local variable...</button>
             </div>
+            <div id="Basepart" class="page">
+                <h1>BasePart</h1>
+
+                <p>
+                    BasePart is a basic part used to build objects and environments in your world.
+                    UNI provides multiple variations of BasePart.
+                </p>
+
+                <button onclick="toggleinfo('BasePartProp')">
+                    See Group Properties
+                </button>
+
+                <div id="BasePartProp" class="card" style="display: none;">
+
+                    <h2>Position</h2>
+                    <p>
+                        Current local position of the Group relative to its parent.
+                    </p>
+                    <p><b>Parameters:</b> Vector3</p>
+
+                    <h2>World Position</h2>
+                    <p>
+                        Current world position of the Group, taking its parent's transform
+                        into account.
+                    </p>
+                    <p><b>Parameters:</b> Vector3</p>
+
+                    <h2>Rotation</h2>
+                    <p>
+                        Current local rotation of the Group relative to its parent.
+                    </p>
+                    <p><b>Parameters:</b> Vector3</p>
+
+                    <div class="knownissue">
+                        <b>Known Issue:</b>
+                        Continuously changing Rotation in a loop may cause unexpected
+                        rotation behavior around certain values. One observed case occurs
+                        around <code>(90, 0, 181)</code>, where the Group may repeatedly
+                        switch between <code>(90, 0, 0)</code> and
+                        <code>(90, 0, 181)</code>. The exact cause is currently unknown.
+                    </div>
+
+                    <h2>World Rotation</h2>
+                    <p>
+                        Current world rotation of the Group, taking its parent's rotation
+                        into account.
+                    </p>
+                    <p><b>Parameters:</b> Vector3</p>
+
+                    <h2>Scale</h2>
+                    <p>
+                        Current size of the Group on the X, Y, and Z axes.
+                    </p>
+                    <p><b>Parameters:</b> Vector3</p>
+
+                    <h2>Forward</h2>
+                    <p>
+                        Returns the Group's forward direction based on its current rotation.
+                        Each component of the Vector3 is between -1 and 1.
+                        The value represents a direction, not a world position, and is not
+                        affected by the Group's Scale.
+                    </p>
+                    <p><b>Parameters:</b> Vector3</p>
+
+                    <p>
+                        <b>Use Case:</b>
+                        To get a concrete position one unit in front of the Group, add
+                        Forward to its Position:
+                    </p>
+
+                    <pre><code>Group.Position + Group.Forward</code></pre>
+
+                    <h2>Right</h2>
+                    <p>
+                        Returns the Group's right direction based on its current rotation.
+                        Each component of the Vector3 is between -1 and 1.
+                        The value represents a direction, not a world position, and is not
+                        affected by the Group's Scale.
+                    </p>
+                    <p><b>Parameters:</b> Vector3</p>
+
+                    <p>
+                        <b>Use Case:</b>
+                        To get a concrete position one unit to the right of the Group, add
+                        Right to its Position:
+                    </p>
+
+                    <pre><code>Group.Position + Group.Right</code></pre>
+
+                    <h2>Up</h2>
+                    <p>
+                        Returns the Group's upward direction based on its current rotation.
+                        Each component of the Vector3 is between -1 and 1.
+                        The value represents a direction, not a world position, and is not
+                        affected by the Group's Scale.
+                    </p>
+                    <p><b>Parameters:</b> Vector3</p>
+
+                    <p>
+                        <b>Use Case:</b>
+                        To get a concrete position one unit above the Group, add Up to its
+                        Position:
+                    </p>
+
+                    <pre><code>Group.Position + Group.Up</code></pre>
+
+                    <h2>Color</h2>
+                    <p>
+                        Current color of the Group.
+                    </p>
+                    <p><b>Parameters:</b> Enum</p>
+
+                    <h2>Texture</h2>
+                    <p>
+                        Current texture applied to the Group.
+                    </p>
+                    <p><b>Parameters:</b> Enum</p>
+
+                    <h2>Enable Collision</h2>
+                    <p>
+                        Determines whether the Group can collide with other objects.
+                    </p>
+                    <p><b>Parameters:</b> Boolean</p>
+
+                    <h2>Collide With Camera</h2>
+                    <p>
+                        Determines whether the camera can collide with the Group.
+                        When disabled, the camera can pass through the Group.
+                    </p>
+                    <p><b>Parameters:</b> Boolean</p>
+
+                    <h2>Is Active</h2>
+                    <p>
+                        Determines whether the Group is active in the world.
+                        When set to false, the Group becomes inactive and is no longer
+                        visible in the world.
+                    </p>
+                    <p><b>Parameters:</b> Boolean</p>
+
+                    <div class="note">
+                        <b>Note:</b>
+                        The following properties are currently not scriptable:
+                        <ul>
+                            <li>Tint Mode</li>
+                            <li>Tiling Mode</li>
+                            <li>Tiling Value</li>
+                        </ul>
+                        These properties are available in the UNI editor but cannot be
+                        accessed or modified through scripting.
+                    </div>
+
+                </div>
+
+                <button onclick="toggleinfo('BasePartMethod')">
+                    See BasePart Commands
+                </button>
+
+                <div id="BasePartMethod" class="methodcard" style="display: none;">
+
+                    <h1>Destroy Self</h1>
+                    <p>
+                        Destroys the Group and removes it from the world.
+                    </p>
+
+                    <h1>Send Broadcast</h1>
+                    <p>
+                        Sends a broadcast signal.
+                    </p>
+
+                    <h1>Add Tag</h1>
+                    <p>
+                        Adds a tag to the Group.
+                    </p>
+
+                    <h1>Remove Tag</h1>
+                    <p>
+                        Removes a tag from the Group.
+                    </p>
+
+                    <h1>Has Tag</h1>
+                    <p>
+                        Checks whether the Group has a specific tag.
+                    </p>
+
+                </div>
+            </div>
+        </div>
 
         </div>
         </div>
