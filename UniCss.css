@@ -23,6 +23,25 @@ p {
     font-size: 16px;
 }
 
+li {
+    margin-top: 12px;
+    margin-bottom: 8px;
+}
+
+ul {
+    background: #31195891;
+    border-radius: 4px;
+    border: 2px solid #47208a;
+    border-left: 6px solid #47208a;
+    max-width: 58%;
+    margin: 8px;
+}
+
+ul b{
+    color: #783ae2;
+    font-weight: bold;
+}
+
 .container {
     display: flex;
     height: 85vh;
@@ -151,6 +170,10 @@ p {
     z-index: 200;
 }
 
+.ChangeLogTabs b{
+    color: #1fb6db;
+}
+
 /*.FaqClassTab {
     width: 1200px;
     max-width: 130vw;
@@ -259,6 +282,10 @@ p {
     align-items: center;
 
     padding: 15px;
+}
+
+.FaqClassContent b{
+    color: #1fb6db;
 }
 
 .FaqClassTab {
@@ -608,7 +635,7 @@ p {
 }
 
 .content b{
-    border-bottom:1px solid #ffffff;
+    color: #1fb6db;
 }
 
 .webname {

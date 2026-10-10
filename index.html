@@ -153,7 +153,7 @@
                  <h3>•Variable•</h3>
                  <button onclick="show('variables')"><img src="icon/Variable.png" class="ButtonSIcon">Variables</button>
                  <h3>•World Scene•</h3>
-                 <button onclick="show('Basepart')">Group</button>
+                 <button onclick="show('Basepart')"><img src="icon/Part.PNG" class="ButtonSIcon">Group</button>
              </div>
 
              <div id="FaqTab" class="FaqClassTab" style="display: none;">
@@ -170,7 +170,6 @@
                 </div>
 
                 <div id="FaqContent" class="FaqClassContent">
-
                     <button onclick="toggleinfo('WebInfo')">
                         What is this website?
                     </button>
@@ -282,6 +281,31 @@
                         </p>
                     </div>
 
+                    <button onclick="toggleinfo('PropAndVar')">
+                       What is the difference between a Property and a Variable?
+                    </button>
+
+                    <div id="PropAndVar" style="display: none;" class="FaqInfoCard">
+                        <p>
+                            A <b>Property</b> is an attribute associated with an <b>object</b> or <b>system</b>, while a <b>Variable</b> is used to store a value within a specific scope or context.
+                            Properties are associated with the object or system they belong to, while variables can store values independently of an object's properties.
+                        </p>
+                        <p>For example, setting a variable named Health to 100 does not automatically change a character's Health property.
+                             The variable and the property are separate unless they are explicitly connected through a script or another mechanism.
+                        </p>
+                        <p>
+                            In UNI,<b>Player Variables</b> and <b>Object Variables</b> are tied to a specific player or object context, but they are still variables rather than ordinary object properties.
+                        </p>
+                    </div>
+
+                    <h1>About FAQ</h1>
+
+                    <p>Not all entries in this FAQ come from questions submitted through the feedback form.
+                         Some are based on questions or discussions <b>ShinSekai</b> encounter directly in the community,
+                          while others are added proactively to address common misunderstandings, 
+                          clarify misleading information or miscommunication, a
+                          nd explain parts of this documentation that may be unclear.</p>
+                    <p>This FAQ serves not only to answer questions, but also to clarify concepts and provide additional context where needed.</p>
                 </div>
             </div>
 
@@ -289,6 +313,16 @@
                 <div id="chgLogHeaders" class="ChgHeaders" style="display: block;">
                     <button onclick="toggleChangelogTabs()" class="toggleLogButton">Close Tab </button>
                 </div>
+                <h1>Update 0.8.1 11/10/2026</h1>
+                <h3>Update log:</h3>
+                <p>1.Added documentation for Group Events:</p>
+                <p>* When Object is Created</p>
+                <p>* When Destroyed</p>
+                <p>* When Broadcast Recieven</p>
+                <p>2.Improved the Broadcast documentation, including Parameters and Sender</p>
+                <p>3.Added an FAQ explaining the difference between Properties and Variables</p>
+                <p>4.Clarified the purpose and sources of FAQ entries</p>
+                <p>5.Improved UI styling for better readability.</p>
                 <h1>Update 0.8 04/10/2026</h1>
                 <h3>Update log:</h3>
 
@@ -391,17 +425,40 @@
                 <p>Uni has 2 different script type Client and Server</p>
                 <p>Note:only some user can access client type script regulations are not found</p>
                 <h2>Broadcast</h2>
-                <p>broadcast can use for send signal,broadcast also return Sender and Parameters</p>
+                <p>Broadcast is used to send signals that can be received by objects with the <b>When Broadcast Recieve</b> event enabled.</p>
+                <p>A broadcast can provide two values to the receiving event: <b>Sender</b> and <b>Parameters</b>.</p>
+
                 <h2>How to use broadcast</h2>
-                <p>to use broadcast occasionaly use Execute block</p>
-                <p>Example: Execute(self):Send broadcast</p>
-                <h2>how to recieve broadcast</h2>
-                <p>in object properties scrool down until you see "When broadcast recieve" event if not found it click point three button in the top of properties tab
-                    then activated the broadcast recieve event
-                </p>
-                <p>Parameters only can be access if you set the parameters when created the broadcast script</p>
+                <p>To send a broadcast, use the <b>Execute</b> block to run the <b>Send Broadcast</b> command.</p>
+                <p><b>Example:</b> <code>Execute(self): Send Broadcast</code></p>
+                <p>This sends a broadcast signal from the object executing the command.</p>
+
+                <h2>Parameters</h2>
+                <p>Parameters are optional values sent along with a broadcast signal and received through the <b>When Broadcast Recieve</b> event.</p>
+                <ul>
+                    <li><b>Optional:</b> Parameters do not need to be configured when creating a broadcast.</li>
+                    <li><b>Multiple value types:</b> Parameters can use different value types supported by UNI, such as Text, Number, Boolean, Group, and Tool.</li>
+                    <li><b>No initial value:</b> Parameters cannot be assigned an initial value when creating the broadcast.</li>
+                    <li><b>Cannot be changed through scripts:</b> Parameters Type cannot be modified through scripts.</li>
+                </ul>
+                <p>Parameters can only be accessed by the receiving event if they were configured when the broadcast was created.</p>
+
                 <h2>Sender</h2>
-                <p>an object who send the broadcast</p>
+                <p>Sender refers to the object that sent the broadcast signal through the <b>Execute</b> block.</p>
+                <p>The receiving event can use Sender to identify the object that sent the broadcast.</p>
+
+                <h2>How to receive broadcast</h2>
+                <p>To receive a broadcast, open the object's <b>Properties</b> tab and scroll down until you find the <b>When Broadcast Recieve</b> event.</p>
+                <p>If the event is not visible, click the three-dot menu at the top of the Properties tab and enable the event.</p>
+                <p>Objects with this event enabled can receive broadcast signals.</p>
+
+                <h2>Notes</h2>
+                <ul>
+                    <li>The <b>When Broadcast Recieve</b> event is available across various UNI components, systems, object,and other...</li>
+                    <li>A broadcast can be received by multiple objects with this event enabled.</li>
+                    <li>The available values depend on the broadcast configuration.</li>
+                </ul>
+                
 
              </div>
 
@@ -1443,7 +1500,7 @@
                         These properties are available in the UNI editor but cannot be
                         accessed or modified through scripting.
                     </div>
-
+                    
                 </div>
 
                 <button onclick="toggleinfo('BasePartMethod')">
@@ -1478,6 +1535,19 @@
                     </p>
 
                 </div>
+                <h1>Group Event</h1>
+                    <h2>When Object is Created</h2>
+                    <p>Triggered when the object is created in the world</p>
+                    <p><b>Returns Value:</b>None</p>
+                    <p><b>Availability: </b>Model Editor and World/Game Editor</p>
+                    <h2>When Destroyed</h2>
+                    <p>Triggered when the object is destroyed using the Destroy Self command or other method</p>
+                    <p><b>Return Value: </b>None</p>
+                    <p><b>Availability: </b>Model Editor and World/Game Editor</p>
+                    <h2>When Broadcast Recieve</h2>
+                    <p>Triggered when the object receives a broadcast message</p>
+                    <button onclick="show('script')">see Broadcast</button>
+                    <p><b>Availability: </b>Model Editor and World/Game Editor(For Group)</p>
             </div>
         </div>
 
