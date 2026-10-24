@@ -23,6 +23,80 @@ p {
     font-size: 16px;
 }
 
+p,
+li,
+td,
+th,
+code {
+    overflow-wrap: anywhere;
+    max-width: 100%;
+}
+
+.Link {
+    color :#801fff;
+    transition: 0.8;
+}
+
+code {
+    display: block;
+}
+
+.QuickRef {
+    max-width: 50%;
+    width: 50%;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    background: #181324; 
+    border-radius: 8px;
+    overflow: hidden; 
+    border: 1px solid #332647;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    border-left: 2px solid #543880;
+}
+
+th {
+    background: #281d3b;
+    color: #e2d3ff;
+    padding: 12px 16px; 
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #3d2c59;
+    border-left: 1px solid #543880;
+}
+
+td {
+    background: transparent;
+    color: #c4b7d8;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #281e38; 
+    transition: background 0.2s ease;
+    border-left: 1px solid #543880;
+}
+
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background: #231933; 
+    cursor: pointer;
+}
+
+
+td:first-child {
+    color: #b78cff;
+    font-weight: 500;
+}
+
+
+td:last-child {
+    color: #73daca;
+}
+
 li {
     margin-top: 12px;
     margin-bottom: 8px;
@@ -86,7 +160,7 @@ ul b{
 @media (max-width: 768px) {
     .webname {
         position: relative;
-        z-index: 100; /* lebih tinggi dari sidebar (99) */
+        z-index: 100; 
     }
 
     .webname h1 {
@@ -122,6 +196,20 @@ ul b{
     }
 
     .content {
+        max-width: 100%;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+
+    .content h1 {
+        font-size: 28px;
+    }
+
+    .content h2 {
+        font-size: 22px;
+    }
+
+    .content p {
         max-width: 100%;
     }
 }
@@ -173,63 +261,6 @@ ul b{
 .ChangeLogTabs b{
     color: #1fb6db;
 }
-
-/*.FaqClassTab {
-    width: 1200px;
-    max-width: 130vw;
-    height: 540px;
-    max-height: 100vw;
-
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    background: linear-gradient(to bottom, #270957, #140927);
-
-    border-radius: 6px;
-    border: 3px solid #140927ab;
-
-    z-index: 201;
-    align-items: center;
-
-    
-    overflow: hidden;
-}
-
-.FaqClassTab::before {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background: linear-gradient(to bottom, #320d6d, #140927);
-
-    opacity: 0;
-    transition: opacity 0.2s linear;
-
-    pointer-events: none;
-}
-
-.FaqClassTab:hover::before {
-    opacity: 1;
-}
-
-
-.FaqClassTab > * {
-    position: relative;
-    z-index: 1;
-}
-
-
-.FaqClassTab {
-    transition: transform 0.2s linear;
-}
-
-.FaqClassTab:hover {
-    transform: translate(-50%, -50%) scale(1.02);
-    cursor: pointer;
-}*/
 
 .FaqHeaderClass {
     width: 100%;
@@ -554,14 +585,16 @@ ul b{
 }
 
 .content {
-    width: 1800px;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
     max-width: 100%;
     padding: 10px;
     flex: 1;
     overflow-y: auto;
     background: linear-gradient(to bottom, #190927,
     #145364);
-    
 }
 
 .tab{

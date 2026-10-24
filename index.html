@@ -67,6 +67,7 @@
                     <button onclick="scrollto('remainder','number')">‣ Remainder</button>
                     <button onclick="scrollto('sin','number')">‣ sin</button>
                     <button onclick="scrollto('cos','number')">‣ cos</button>
+                    <button onclick="scrollto('tan','number')">‣ tan</button>
                     <button onclick="scrollto('pi','number')">‣ Pi</button>
                     <button onclick="scrollto('touchposition','number')">‣ Touch Position</button>
                     <button onclick="scrollto('betweendistance','number')">‣ Between distance</button>
@@ -306,6 +307,8 @@
                           clarify misleading information or miscommunication, a
                           nd explain parts of this documentation that may be unclear.</p>
                     <p>This FAQ serves not only to answer questions, but also to clarify concepts and provide additional context where needed.</p>
+
+                    
                 </div>
             </div>
 
@@ -313,6 +316,53 @@
                 <div id="chgLogHeaders" class="ChgHeaders" style="display: block;">
                     <button onclick="toggleChangelogTabs()" class="toggleLogButton">Close Tab </button>
                 </div>
+                <h1>Update 0.8.2 24/10/2026</h1>
+                <h3>Update log:</h3>
+
+                <p>1.Variables section improvements:</p>
+                <p>* Added Parameters Type documentation</p>
+                <p>* Added Parameters Type reference image</p>
+                <p>* Added additional Parameters Types</p>
+                <p>* Added shortcuts to existing documentation for supported Parameters Types</p>
+                <p>* Added Note about changing variable value types through script</p>
+                <p>* Added Enum value storage information and observed limitations</p>
+                <p>* Added information that Object values can store UI Objects</p>
+                <p>* Added Note about Player Variable using Player as its Parameters Type</p>
+                <p>* Improved Player Variable documentation for Cloud Variables</p>
+                <p>* Added Local Variable documentation</p>
+
+                <p>2.Commands section improvements:</p>
+                <p>* Added Written Script Code representation for command blocks</p>
+                <p>* Added shortcut from Create New to Local Variable documentation</p>
+                <p>* Added shortcut to Array documentation</p>
+                <p>* Improved Execute documentation with return value information and example</p>
+                <p>* Improved Tween documentation with duration and stopping behavior information</p>
+
+                <p>3.Script section improvements:</p>
+                <p>* Added "What is Event?" documentation</p>
+                <p>* Added script execution flow</p>
+                <p>* Added information that scripts must be triggered by an Event</p>
+                <p>* Added information about Events that can provide or return values</p>
+                <p>* Added Event-like behavior documentation using Keep Loop Until and Wait Until Receive Broadcast</p>
+                <p>* Added Thread-like behavior documentation based on observed behavior</p>
+
+                <p>4.Number section:</p>
+                <p>* Added Tan workaround using Sin and Cos</p>
+                <p>* Added shortcut to Tan documentation</p>
+
+                <p>5.Introduction section:</p>
+                <p>* Added Donation section</p>
+                <p>* Added information about Written Script Code being a reference to UNI Script Blocks, not valid UNI syntax</p>
+
+                <p>6.Expression section</p>
+                <p>* Added array shortcut in all player documentation</p>
+
+                <button onclick="show('variables')" class="visitbutton">Visit Variables section→</button>
+                <button onclick="show('Commands')" class="visitbutton">Visit Commands→</button>
+                <button onclick="show('script')" class="visitbutton">Visit Script→</button>
+                <button onclick="show('number')" class="visitbutton">Visit Number→</button>
+                <button onclick="show('Expression')" class="visitbutton">Visit Expression→</button>
+
                 <h1>Update 0.8.1 11/10/2026</h1>
                 <h3>Update log:</h3>
                 <p>1.Added documentation for Group Events:</p>
@@ -403,29 +453,49 @@
 
              <div id="introduction" class="page">
                 <h1>WELCOME</h1>
-                <p>Welcome to Uni Unofficial Scripting Documentation.</p>
+                <p>Welcome to Uni:Craft your world Unofficial Scripting Documentation.</p>
                 <p>This website was created by <b>ShinSekai</b> to help creators learn <b>Uni</b>(Uni:Craft Your World) scripting more easily.</p>
                 <h3>What is this website?</h3>
                 <p>This documentation contains community-made explanations, examples, and references for <b>Uni</b> scripting features.</p>
-                <h3>Disclaimer</h3>
-                <p>This documentation is based on personal experience and testing. Some information may be incomplete, incorrect, outdated, or differ after platform updates,
-                    also we only include a scriptable properties</p>
                 <h3>Report an Issue</h3>
                 <P>Found incorrect information or missing documentation? Please submit a report.</P>
+                <h3 class="warn">Disclaimer</h3>
+                <p>This documentation is based on personal experience and testing. Some information may be incomplete, incorrect, outdated, or differ after platform updates,
+                    also we only include a scriptable properties</p>
                 <h3>Notes:</h3>
+                <p><b>Written script code</b> in this documentation is not a valid UNI Syntax,is just a reference from Uni Script Block,Script in <b>UNI</b> is a block based script like scratch and other...</p>
                 <p>You are free to use, 
                     copy, modify, or translate this documentation.
                      Its primary purpose is to help the community. 
                      I don't mind how you use it, 
                      as long as you don't claim it as your own work.</p>
+
+                <h2>Donation</h2>
+                <p>Saweria:</p>
+                <a href="https://saweria.co/Shinsekaidesu" target="_blank" rel="noopener noreferrer" class="Link">[Support this project]</a>
              </div>
 
              <div id="script" class="page">
                 <h1>What is script?</h1>
                 <P>In Uni and other platform ,script is a buch of code use for execute instruction</P>
+
                 <h2>Script Type</h2>
                 <p>Uni has 2 different script type Client and Server</p>
-                <p>Note:only some user can access client type script regulations are not found</p>
+                <p><b>Note:</b>only some user can access client type script regulations are not found</p>
+
+                <h1>What is event?</h1>
+                <p>Events are triggers that run a script when a specific action or condition occurs.</p>
+                <p>Execution flow:Event→Script→Commands</p>
+                <p><b>Note:</b>A script cannot run by itself and must be triggered by an Event</p>
+                <p><b>Note:</b>only Some Events can also provide or return a value to the script</p>
+                <h2>Event-like behavior</h2>
+                <p>Keep Loop Until combined with Wait Until Receive Broadcast can produce behavior similar to an Event waiting for a Broadcast.
+                     However, the script itself must already be running, while
+                      an Event is used to trigger the script</p>
+                <p>Written representation:</p>
+                <code>keep loop until(<span class="booleanfalse">false</span>):Frame by Frame Execution</code>
+                <code>| Wait until recieve broadcast(Select broadcast)</code>
+
                 <h1>Broadcast</h1>
                 <p>Broadcast is used to send signals that can be received by objects with the <b>When Broadcast Recieve</b> event enabled.</p>
                 <p>A broadcast can provide two values to the receiving event: <b>Sender</b> and <b>Parameters</b>.</p>
@@ -461,6 +531,11 @@
                     <li>The available values depend on the broadcast configuration.</li>
                 </ul>
                 
+                <h1>Thread-like behavior</h1>
+                <p><b>Observed behavior</b>: Triggering an event again may start another execution while the previous execution is still running. This means multiple executions of the same event can run concurrently.
+                    The exact mechanism behind this behavior is currently undocumented. This is described as thread-like behavior based on its observed behavior, not as confirmation that UNI uses actual threads
+                </p>
+                <p><b>FunFact:</b>This behavior was originally observed/reported by a community member</p>
 
              </div>
 
@@ -496,6 +571,39 @@
                 <h3>Example:Get Date Times(HH:MM:SS)</h3>
                 <p>Note: HH=Hours, MM=Minutes, SS=Seconds</p>
                 <p>result:<span class="synString">20:18:55</span>(example)</p>
+
+                <h1>Properties Quick reference</h1>
+
+                <table class="QuickRef" style="display: none;">
+                    <head>
+                        <tr>
+                            <th>Properties</th>
+                            <th>Info</th>
+                            <th>Example</th>
+                            <th>Result</th>
+                        </tr>
+                    </head>
+                    <body>
+                        <tr onclick="scrollto('length','string')">
+                            <td>Length</td>
+                            <td>How much letters on text</td>
+                            <td>Hello World.Length</td>
+                            <td><span class="synNumber">11</span></td>
+                        </tr>
+                        <tr onclick="scrollto('search','string')">
+                            <td>Search</td>
+                            <td>give index of the letter</td>
+                            <td>Hello World.Search find the(1) StringApiComponentExtention_Search_searchValue_1(Hello)location</td>
+                            <td><span class="synNumber">1</span></td>
+                        </tr>
+                        <tr onclick="scrollto('replace','string')">
+                            <td>Replace</td>
+                            <td>to replace all text with other text</td>
+                            <td>Example:Hello World.Replace replace all(World) = (guys)</td>
+                            <td><span class="synString">Hello guys</span></td>
+                        </tr>
+                    </body>
+                </table>
 
                 <h1>Property</h1>
                 <img src="Expressions/propert_expression.png" class="shortscriptBlockImg">
@@ -594,6 +702,8 @@
                  <h3>Example2:Hello World.Contains contain(W)</h3>
                 <p>result=<span class = "booleantrue">True</span></p>
                 <p>if not contains <span class="synString">W</span> will return <span class="booleanfalse">False</span></p>
+
+                
              </div>
 
              <div id="number" class="page">
@@ -646,6 +756,10 @@
                 <video class="demoVideo" controls autoplay muted loop> <source src="Video/SinCosGraphDocs.mp4" type="video/mp4"></video>
                 <img src="BlockImg/number_singraphscript.png" class="longscriptBlockImg">
                 <p>Note:Sin(blue),Cos(Red)</p>
+
+                <h1 id="tan">tan(Custom)</h1>
+                <p>Tan is not directly available in UNI, but it can be calculated using Sin and Cos</p>
+                <code>Create new(tan) = sin(angle) / cos(angle)</code>
 
                 <h1 id="pi">Expression → Number → PI</h1>
                 <img src="BlockImg/number_PI.png" class="smallscrptBlockImg">
@@ -982,41 +1096,62 @@
                 <img src="logicBlockimg/command_debug print.png" class="shortscriptBlockImg">
                 <p>debug print used to print value when script is running</p>
                 <p>note:Debug print cant print array/table value</p>
+                <code>Written representation:Debug.print()</code>
 
                 <h1 id="createnew">create new</h1>
                 <img src="logicBlockimg/command_createnew.png" class="midscriptBlockImg">
                 <p>use to create new local variable with value,Variables created with Create New are local and can only be used inside the current script.</p>
+                <code>Written representation:Create new(name) = value</code>
+                <button onclick="scrollto('localvariable','variables')">See Local Variable...</button>
 
                 <h1 id="set">Set</h1>
                 <img src="logicBlockimg/command_set.png" class="midscriptBlockImg">
                 <p>use to set value of variable or object property</p>
                 <p>if value is a number/Vector "change to" can be change to <b>"Reduce"(-)</b> and <b>"add"(+)</b></p>
                 <p>Note:do not use property block if your variable type is number or string.also different object has different property check object property instead</p>
+                <code>Written representation(change variables value):Set(value) change to (parameters)</code>
+                <p>Note:if your varriable value is array,you must change the value inside an array using property block</p>
+                <code>Written representation(object with properties):Set(value).property change to (parameters)</code>
 
                 <h1 id="execute">execute</h1>
                 <img src="logicBlockimg/command_execute.png" class="scriptBlockImg">
                 <p>use for Calls a method/function from an object</p>
                 <p>similar to Method ":" in roblox luau</p>
                 <p>Note:The available methods depend on the selected object</p>
+                <p>execute with return value for example:<b>Execute(System):Create models</b></p>
+                <p>can be change to: create(N) as the return value of executing:(system) enviroment.Create Model Generate:(model asset) at vector3(X,Y,Z) parent object(object)</p>
+                <p>N is a local variable who have value model asset</p>
+                <p>Note:Make sure you publish your model asset first not depend in public/private also you can use other people asset too</p>
+                <code>Written representation(without parameters):Execute(value):command</code>
+                <code>Written representationn(with parameters) : Execute(value):command(parameters,parameters-N)</code>
+
 
                 <h1 id="tween">tween</h1>
                 <img src="logicBlockimg/command_tween.png" class="longscriptBlockImg">
                 <p>tween used to tween object property contains number</p>
                 <p>Tween able property:3D/2D location,3D/2D Rotation,3D/2D Size,Color,UI Group transparency,UI transparency,UI object Scale,<b>and More...</b></p>
+                <code>Writen:tween(object).properties with(easing style) change to (parameters) wait (number) sec</code>
+                <p>Note:"wait(number) sec" also the duration of tween</p>
+                <p>Note:tween cannot be stopped when is running</p>
                 <h2>Easing Style</h2>
                 <h3>Linear/Smooth/Prog</h3>
                  <video class="demoVideo" controls autoplay muted loop> <source src="Video/linearDocs1.mp4" type="video/mp4"></video>
-                <h3>quadratics</h3>
+                <h3>quadratics 1/2/3</h3>
                 <video class="demoVideo" controls autoplay muted loop> <source src="Video/quadraticDocs.mp4" type="video/mp4"></video>
-                <h3>return motion</h3>
+                <h3>return motion 1/2/3</h3>
                 <video class="demoVideo" controls autoplay muted loop> <source src="Video/returnMotionDocs.mp4" type="video/mp4"></video>
-                <h3>spring return motion</h3>
+                <h3>spring return motion 1/2/3</h3>
                 <video class="demoVideo" controls autoplay muted loop> <source src="Video/SpringReturnMotionDocs.mp4" type="video/mp4"></video>
-                <h3>bounce</h3>
+                <h3>bounce 1/2/3</h3>
                 <video class="demoVideo" controls autoplay muted loop> <source src="Video/BounceDocs.mp4" type="video/mp4"></video>
                 <h1 id="comment">comment</h1>
                 <img src="logicBlockimg/command_comment.png" class="scriptBlockImg">
                 <p>Comments are used to add notes inside scripts.Comments do not affect script execution.</p>
+                <p>Written representation:Comment(text)</p>
+                <p>Written representation(with other script):</p>
+                <pre>Comment(<span class="synString">Text</span>)
+                    | debug.print(<span class="synString">Hello world</span>)
+                </pre>
             </div>
             <div id="Logic" class="page">
                 <h1 id="if">if</h1>
@@ -1330,27 +1465,57 @@
                 <p>Returns a collection containing all players currently in the same server.</p>
                 <p>Useful for multiplayer features such as broadcasting messages, looping through players, or applying actions to every player in the game.</p>
                 <p>type:<b>array</b></p>
+                <button onclick="show('array','arraydropdown')">Array</button>
 
             </div>
             <div id = "variables" class="page">
-                <h1>Variables</h1>
+                <h1 id="variablesID">Variables</h1>
                 <p>Variables are used to store data that can be read or changed during runtime</p>
+                <p>Note:you can change variable value type trough script when change the parameters with different type of parameters from value type</p>
+                <p>Note:Enum values can be stored in variables. However, stored Enum values cannot necessarily be used to set every Enum property. Currently observed exceptions include Color and Texture</p>
+                <h1 id="parameterstype">Parameters Type</h1>
+                <p>Parameters type using for declarate Parameters value when created the variables</p>
+                <img src="Utility/Parameter.png" class="midscriptBlockImg">
+                <ul>
+                    <li><button onclick="show('number','numberdropdown')">Number→</button></li>
+                    <li><button onclick="show('string','stringdropdown')">String/text→</button></li>
+                    <li>Boolean</li>
+                    <li><button onclick="show('vector','vectordropdown')">Vector 3→</button></li>
+                    <li><button onclick="show('vector','vectordropdown')">Vector 2→</button></li>
+                    <li>Color</li>
+                    <li>Texture</li>
+                    <li><button onclick="show('Group')">Object→</button></li>
+                    <li>Player</li>
+                    <li>Picture</li>
+                    <li>Audio</li>
+                    <li>Clothing</li>
+                    <li>Prop</li>
+                    <li>Vehicle</li>
+                    <li>Active/Animation</li>
+                    <li>Model</li>
+                    <li><button onclick="show('array','arraydropdown')">Array→</button></li>
+                </ul>
+                <p>parameters with object type also can store UI object like Ui Button</p>
+                <p>Note:if your player variable parameters type is player you cant change the value to different value</p>
                 <h1>Global Variable</h1>
                 <p>Stores data that can be accessed from anywhere in your project</p>
                 <p><b>Note:</b>Enable Sync Variable to synchronize changes with all players in multiplayer</p>
                 <p><b>FunFact:</b>Can be used for simple client-side logic as a lightweight alternative to Client Script</p>
-                <h1>Player Variable</h1>
+                <h1 id="playervariable">Player Variable</h1>
                 <p>Stores data for a specific player. Each player has their own value</p>
+                <p>Active Cloud checkbox to make your player data is persistent</p>
+                <p><b>Note:</b>Cloud variable cannot activated when the parameters/value type is player</p>
                 <p><b>Note:</b>Can be accessed from player Properties</p>
                 <p><b>Note:</b>Only affects the player it belongs to</p>
                 <p ><span class="warn">Community reports indicate that Player Variables may occasionally fail to save data</span></p>
-                <h1>Object Variable</h1>
+                <h1 id="objectvariable">Object Variable</h1>
                 <p>Stores data for a specific object</p>
                 <p><b>Note:</b>Only affects the object it is attached to</p>
                 <p><b>Note:</b>Different objects can use the same variable name while storing different values</p>
                 <p><b>Note:</b>Useful for storing object-specific states or properties</p>
-                <h1>Local Variable</h1>
-                <button onclick="scrollto('createnew','Commands')">See local variable...</button>
+                <h1 id="localvariable'">Local Variable</h1>
+                <p>Can be created with <b>Create new</b>,Variables created with Create New are local and can only be used inside the current script</p>
+                <button onclick="scrollto('createnew','Commands')">See Create new...</button>
             </div>
             <div id="Basepart" class="page">
                 <h1>Group</h1>
