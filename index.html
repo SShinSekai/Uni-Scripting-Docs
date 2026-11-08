@@ -153,8 +153,11 @@
 
                  <h3>•Variable•</h3>
                  <button onclick="show('variables')"><img src="icon/Variable.png" class="ButtonSIcon">Variables</button>
-                 <h3>•World Scene•</h3>
+                 <h3>•World Object•</h3>
                  <button onclick="show('Basepart')"><img src="icon/Part.PNG" class="ButtonSIcon">Group</button>
+                 <h3>•Component•</h3>
+                 <button onclick="show('triggerCompID')"><img src="icon/Part.PNG" class="ButtonSIcon">Triggger</button>
+                 <button onclick="show('DetectableCompID')"><img src="icon/Part.PNG" class="ButtonSIcon">Detectable</button>
              </div>
 
              <div id="FaqTab" class="FaqClassTab" style="display: none;">
@@ -168,6 +171,7 @@
                     >
                         Submit Question
                     </a>
+                    <button onclick="toggleFaqTab()" class="FaqSubmitButton">✕</button>
                 </div>
 
                 <div id="FaqContent" class="FaqClassContent">
@@ -316,6 +320,56 @@
                 <div id="chgLogHeaders" class="ChgHeaders" style="display: block;">
                     <button onclick="toggleChangelogTabs()" class="toggleLogButton">Close Tab </button>
                 </div>
+                <h1>Update 0.9 08/11/2026</h1>
+                <h3>Update log:</h3>
+
+                <p>1.Interaction Components:</p>
+                <p>* Added Trigger Component documentation</p>
+                <p>* Added Detectable Component documentation</p>
+                <p>* Added Trigger behavior, detection modes, and properties</p>
+                <p>* Added Trigger Event documentation</p>
+                <p>* Added Trigger Requirements reference for Group Objects and Characters</p>
+                <p>* Added Trigger Transform Behavior documentation</p>
+                <p>* Added Trigger Editor Behavior documentation</p>
+                <p>* Added information about Collision and Detectable requirements</p>
+
+                <p>2.Variables section improvements:</p>
+                <p>* Added Variable Availability documentation for different editor and runtime contexts</p>
+                <p>* Added additional notes about Player parameter type restrictions</p>
+                <p>* Improved Global Variable behavior documentation</p>
+
+                <p>3.Script section improvements:</p>
+                <p>* Added additional Broadcast documentation</p>
+                <p>* Added Broadcast parameter behavior information</p>
+                <p>* Added Known Issue about Broadcast saving behavior in Model Editor</p>
+
+                <p>4.Commands section improvements:</p>
+                <p>* Added additional Written Script Code representations</p>
+                <p>* Added information about Create Model references requiring manual updates after model changes</p>
+                <p>* Improved Tween documentation with real-time property update behavior</p>
+
+                <p>5.Expression section improvements:</p>
+                <p>* Expanded Audio documentation</p>
+                <p>* Improved Sky documentation</p>
+                <p>* Expanded Lighting property documentation</p>
+                <p>* Improved View & Filter documentation</p>
+                <p>* Improved Floor property documentation</p>
+                <p>* Added additional parameter type information and property notes</p>
+
+                <p>6.Group section improvements:</p>
+                <p>* Improved Group tag command descriptions</p>
+
+                <p>7.Introduction section:</p>
+                <p>* Added "ShinSekai Personality" Easter Egg</p>
+
+                <button onclick="show('triggerCompID')" class="visitbutton">Visit Trigger→</button>
+                <button onclick="show('DetectableCompID')" class="visitbutton">Visit Detectable→</button>
+                <button onclick="show('variables')" class="visitbutton">Visit Variables→</button>
+                <button onclick="show('Basepart')" class="visitbutton">Visit Group→</button>
+                <button onclick="show('Expression')" class="visitbutton">Visit Expression→</button>
+                <button onclick="show('Commands')" class="visitbutton">Visit Commands→</button>
+                <button onclick="show('script')" class="visitbutton">Visit Script→</button>
+                <button onclick="show('introduction')" class="visitbutton">Visit Introduction→</button>
                 <h1>Update 0.8.2 24/10/2026</h1>
                 <h3>Update log:</h3>
 
@@ -460,8 +514,8 @@
                 <h3>Report an Issue</h3>
                 <P>Found incorrect information or missing documentation? Please submit a report.</P>
                 <h3 class="warn">Disclaimer</h3>
-                <p>This documentation is based on personal experience and testing. Some information may be incomplete, incorrect, outdated, or differ after platform updates,
-                    also we only include a scriptable properties</p>
+                <p>This documentation is based on personal experience ,testing and official documentation By <b>Uni</b> itself. Some information may be incomplete, incorrect, outdated, or differ after platform updates,
+                    also we only include a scriptable properties except the properties is related to script execution</p>
                 <h3>Notes:</h3>
                 <p><b>Written script code</b> in this documentation is not a valid UNI Syntax,is just a reference from Uni Script Block,Script in <b>UNI</b> is a block based script like scratch and other...</p>
                 <p>You are free to use, 
@@ -473,6 +527,7 @@
                 <h2>Donation</h2>
                 <p>Saweria:</p>
                 <a href="https://saweria.co/Shinsekaidesu" target="_blank" rel="noopener noreferrer" class="Link">[Support this project]</a>
+                <p>(Pls im broke😂)</p>
              </div>
 
              <div id="script" class="page">
@@ -502,7 +557,9 @@
 
                 <h2>How to use broadcast</h2>
                 <p>To send a broadcast, use the <b>Execute</b> block to run the <b>Send Broadcast</b> command.</p>
-                <p><b>Example:</b> <code>Execute(self): Send Broadcast</code></p>
+                <p>Written representation:</p>
+                <code>Execute(self): Send Broadcast</code>
+                <code>Execute(Self): Send Broadcast(Parameters,Parameters-N)</code>
                 <p>This sends a broadcast signal from the object executing the command.</p>
 
                 <h2>Parameters</h2>
@@ -514,6 +571,7 @@
                     <li><b>Cannot be changed through scripts:</b> Parameters Type cannot be modified through scripts.</li>
                 </ul>
                 <p>Parameters can only be accessed by the receiving event if they were configured when the broadcast was created.</p>
+                <button onclick="scrollto('ParametersOverWriteID','variables')">Visit Parameters OverWrite in Variables Section→</button>
 
                 <h2>Sender</h2>
                 <p>Sender refers to the object that sent the broadcast signal through the <b>Execute</b> block.</p>
@@ -536,7 +594,7 @@
                     The exact mechanism behind this behavior is currently undocumented. This is described as thread-like behavior based on its observed behavior, not as confirmation that UNI uses actual threads
                 </p>
                 <p><b>FunFact:</b>This behavior was originally observed/reported by a community member</p>
-
+                <p><span class="warn">Known Issues</span>:When you created broadcast in Model editor mode,the broadcast may cant be saved even you Update/Saved your model</p>
              </div>
 
              <div id="string" class="page">
@@ -571,8 +629,6 @@
                 <h3>Example:Get Date Times(HH:MM:SS)</h3>
                 <p>Note: HH=Hours, MM=Minutes, SS=Seconds</p>
                 <p>result:<span class="synString">20:18:55</span>(example)</p>
-
-                <h1>Properties Quick reference</h1>
 
                 <table class="QuickRef" style="display: none;">
                     <head>
@@ -1096,12 +1152,14 @@
                 <img src="logicBlockimg/command_debug print.png" class="shortscriptBlockImg">
                 <p>debug print used to print value when script is running</p>
                 <p>note:Debug print cant print array/table value</p>
-                <code>Written representation:Debug.print()</code>
+                <p>Written representation:</p>
+                <code>Debug.print()</code>
 
                 <h1 id="createnew">create new</h1>
                 <img src="logicBlockimg/command_createnew.png" class="midscriptBlockImg">
                 <p>use to create new local variable with value,Variables created with Create New are local and can only be used inside the current script.</p>
-                <code>Written representation:Create new(name) = value</code>
+                <p>Written representation:</p>
+                <code>Create new(name) = value</code>
                 <button onclick="scrollto('localvariable','variables')">See Local Variable...</button>
 
                 <h1 id="set">Set</h1>
@@ -1109,9 +1167,11 @@
                 <p>use to set value of variable or object property</p>
                 <p>if value is a number/Vector "change to" can be change to <b>"Reduce"(-)</b> and <b>"add"(+)</b></p>
                 <p>Note:do not use property block if your variable type is number or string.also different object has different property check object property instead</p>
-                <code>Written representation(change variables value):Set(value) change to (parameters)</code>
+                <p>Written representation(change variables value):</p>
+                <code>Set(value) change to (parameters)</code>
                 <p>Note:if your varriable value is array,you must change the value inside an array using property block</p>
-                <code>Written representation(object with properties):Set(value).property change to (parameters)</code>
+                <p>Written representation(object with properties):</p>
+                <code>Set(value.property) change to (parameters)</code>
 
                 <h1 id="execute">execute</h1>
                 <img src="logicBlockimg/command_execute.png" class="scriptBlockImg">
@@ -1122,15 +1182,19 @@
                 <p>can be change to: create(N) as the return value of executing:(system) enviroment.Create Model Generate:(model asset) at vector3(X,Y,Z) parent object(object)</p>
                 <p>N is a local variable who have value model asset</p>
                 <p>Note:Make sure you publish your model asset first not depend in public/private also you can use other people asset too</p>
-                <code>Written representation(without parameters):Execute(value):command</code>
-                <code>Written representationn(with parameters) : Execute(value):command(parameters,parameters-N)</code>
+                <p>Written representation(without parameters):</p>
+                <code>Execute(value):command</code>
+                <p>Written representationn(with parameters) :</p>
+                <code>Execute(value):command(parameters,parameters-N)</code>
 
 
                 <h1 id="tween">tween</h1>
                 <img src="logicBlockimg/command_tween.png" class="longscriptBlockImg">
                 <p>tween used to tween object property contains number</p>
                 <p>Tween able property:3D/2D location,3D/2D Rotation,3D/2D Size,Color,UI Group transparency,UI transparency,UI object Scale,<b>and More...</b></p>
-                <code>Writen:tween(object).properties with(easing style) change to (parameters) wait (number) sec</code>
+                <p>the property of an object on tween updated Real time</p>
+                <p>Writen representation:</p>
+                <code>tween(object).properties with(easing style) change to (parameters) wait (number) sec</code>
                 <p>Note:"wait(number) sec" also the duration of tween</p>
                 <p>Note:tween cannot be stopped when is running</p>
                 <h2>Easing Style</h2>
@@ -1149,9 +1213,9 @@
                 <p>Comments are used to add notes inside scripts.Comments do not affect script execution.</p>
                 <p>Written representation:Comment(text)</p>
                 <p>Written representation(with other script):</p>
-                <pre>Comment(<span class="synString">Text</span>)
-                    | debug.print(<span class="synString">Hello world</span>)
-                </pre>
+                <code>
+                Comment(<spam class="synString">Text</spam>)
+                </code>
             </div>
             <div id="Logic" class="page">
                 <h1 id="if">if</h1>
@@ -1310,16 +1374,20 @@
                 <button onclick="toggleinfo('audio')">Audio:</button>
                 <div id="audio" style="display: none;" class="card">
                     <h2>BGM (Background Music)</h2> <p>Gets or changes the current background music of the map.</p>
+                    <p><b>Parameters</b>:Audio</p>
                     <h2>BGM Volume</h2> <p>Controls the volume of the background music.</p> <p><b>Range:</b> 0 - 100</p> <p><b>Note:</b> The maximum volume is 100.</p>
+                    <p><b>Parameters</b>:Audio</p>
                 </div>
                 <button onclick="toggleinfo('sky')">Sky:</button>
                 <div id ="sky" style="display: none;" class="card">
                     <h2>Sky</h2>
                      <p>Changes the Skybox displayed around the map.</p> 
                      <p><b>Note:</b> The Skybox is a visual background and is separate from Distant View.</p>
+                    <p><b>Parameters</b>:Enum Sky</p>
                     <h2>Sky Fog Intense</h2> 
                     <p>Controls the fog visibility applied to the Skybox.</p>
                      <p><b>Note:</b> This property only affects the Skybox.</p>
+                    <p><b>Parameters</b>:Number</p>
                     <p><b>Info:</b> Horizon Height is not scriptable in Uni 2.53.</p> 
                     <p>Please submit a report if Horizon Height becomes scriptable in future versions.</p>
 
@@ -1327,20 +1395,27 @@
                 </div>
                 <button onclick="toggleinfo('lighting')">Lighting:</button>
                 <div id="lighting" style="display: none;" class="card">
-                    <h2>Light Color</h2> <p>Changes the color of the main directional light.</p> <p>This affects the overall lighting color of the scene.</p>
+                    <h2>Light Color</h2> 
+                    <p>Changes the color of the main directional light.</p> 
+                    <p>This affects the overall lighting color of the scene.</p>
+                    <p><b>Parameters</b>:Enum Color</p>
                     <h2>Light Intensity</h2> 
                     <p>Controls the brightness of the main light source.</p>
                     <p>Higher values make the map brighter.</p>
+                    <p><b>Parameters</b>:Number</p>
                     <h2>Light Angle</h2> 
                     <p>Controls the vertical position of the light source.</p>
                     <p>This can be used to simulate sunrise, sunset, or midday lighting.</p>
+                    <p><b>Parameters</b>:Number</p>
                     <h2>Light Direction</h2>
                     <p>Controls the horizontal rotation of the light source.</p> 
                     <p>Changes the direction from which shadows and light are cast.</p>
+                    <p><b>Parameters</b>:Number</p>
                     <h2>Ambient Color</h2> 
                     <p>Changes the ambient light color of the scene.</p> 
                     <p>Ambient light affects areas that are not directly lit by the main light.</p>
                     <p><b>Note:</b> Darker ambient colors may appear more transparent.</p> </p>
+                    <p><b>Parameters</b>:Enum Color</p>
                 </div>
                 <button onclick="toggleinfo('view')">View&filter:</button>
                 <div id="view" style="display: none;" class="card">
@@ -1353,11 +1428,13 @@
                         <li>Space</li>
                         <li>Desert</li>
                     </ul>
+                    <p><b>Parameters</b>:Enum Distant View</p>
                     <p><b>Note:</b> Distant View is look like a 3D object and not part of the Skybox.</p>
                     <p><b>Note:</b> Distant View does not scale with map size. On very large maps, players may be able to get close to it.</p>
                     <h2>View Direction</h2>
                     <p>Rotates the Distant View horizontally.</p>
                     <p>Range: 0° - 360°</p>
+                    <p><b>Parameters</b>:Number</p>
                     <h2>Filter</h2>
                     <p>Applies a visual filter to the rendered scene.</p>
                     <p>Available modes:</p>
@@ -1365,6 +1442,7 @@
                         <li>Normal</li>
                         <li>Pixelated</li>
                     </ul>
+                    <p><b>Parameters</b>:Enum Filter</p>
                     <p><b>Note:</b> Filters affect Distant View.</p>
                     <p><b>Note:</b> Filters do not affect the Skybox.</p>
                     <p><b>Fun Fact:</b> Pixelated mode may improve performance on some devices.</p>
@@ -1384,12 +1462,15 @@
                     </ul>
 
                     <p><b>Note:</b> Floor Size uses presets and cannot be set using Vector3 values.</p>
+                    <p><b>Parameters</b>:Enum Floor SIze</p>
 
                     <h2>Floor Color</h2>
-                    <p>Changes the color of the floor.</p>
+                    <p>Changes the color of the floor</p>
+                    <p><b>Parameters</b>:Enum Color</p>
 
                     <h2>Tint Mode</h2>
                     <p>Controls how floor coloring is applied.</p>
+                    <p><b>Parameters</b>:Enum Tint Mode</p>
 
                     <p>Available modes:</p>
                     <ul>
@@ -1399,7 +1480,7 @@
 
                     <h2>Floor Texture</h2>
                     <p>Changes the texture used by the floor.</p>
-
+                    <p><b>Parameters</b>:Enum Texture</p>
                 </div>
                 <button onclick="toggleinfo('fog')">Weather&fog:</button>
                 <div id="fog" style="display: none;" class="card">
@@ -1438,10 +1519,15 @@
                 <div id="systemcommand" style="display: none;" class="methodcard">
                     <h2>Create model</h2>
                     <p>Creates a model from the selected asset.</p>
+                    <p><b>Return Value</b>:Object</p>
+                    <h3 tag="warn">Important:</h3>
+                    <p>When you updated your model,its reference in Create model Command still in previously must being update manually first</p>
                     <h2>Create Hand Held prop</h2>
                     <p>Creates a prop who can held by players from the selected tool asset</p>
+                    <p><b>Return Value</b>:Prop</p>
                     <h2>Create character</h2>
                     <p>Creates a character from the selected character asset.</p>
+                    <p><b>Return Value</b>:Character</p>
                     <h2>3D bubble</h2>
                     <p>Displays a floating text bubble</p>
                     <h2>Play Spatial Audio</h2>
@@ -1458,6 +1544,7 @@
                     <p>Stop BGM, it will reset from the start when played again.</p>
                     <h2>Stop all Audio</h2>
                     <p>Stop all played audio in our game</p>
+                    <p>This System Command documentation is Not clear yet must have further research</p>
                 </div>
 
 
@@ -1471,8 +1558,66 @@
             <div id = "variables" class="page">
                 <h1 id="variablesID">Variables</h1>
                 <p>Variables are used to store data that can be read or changed during runtime</p>
-                <p>Note:you can change variable value type trough script when change the parameters with different type of parameters from value type</p>
-                <p>Note:Enum values can be stored in variables. However, stored Enum values cannot necessarily be used to set every Enum property. Currently observed exceptions include Color and Texture</p>
+                <h1>Variables Behavior</h1>
+                <p>you can change variable value type trough script when change the parameters with different type of parameters from value type</p>
+                <p>Enum values can be stored in variables. However, stored Enum values cannot necessarily be used to set every Enum property. Currently observed exceptions include Color and Texture</p>
+                <h1 id="VarAvailable">Variable Availability</h1>
+                <p>Variables Availability in Context</p>
+                <h2>Model Editor-World Editor</h2>
+                <p>When a model containing Variables is added to the World Editor in Editor Mode, the following behavior has been observed:</p>
+                <div class="table-container">
+                    <table class="QuickRef">
+                        <tr>
+                            <th>Resource</th>
+                            <th>Availability</th>
+                        </tr>
+                        <tr>
+                            <td>Global Variable</td>
+                            <td>Available</td>
+                        </tr>
+                        <tr>
+                            <td>Player Variable</td>
+                            <td>Available</td>
+                        </tr>
+                        <tr>
+                            <td>object Variable</td>
+                            <td>UnAvailable</td>
+                        </tr>
+                    </table>
+                </div>
+                <h3>Observed Behavior:</h3>
+                <ul>
+                    <li>Global Variables may display options to create a new variable, rename an existing variable, or merge with a variable that has the same name</li>
+                    <li>Player Variables use a similar mechanism, including the option to merge with an existing Player Variable with the same name</li>
+                    <li>Object Variables are not transferred or made available in this workflow</li>
+                </ul>
+                <p><b>Status</b>:Tested under the observed conditions</p>
+                <h2>Model Editor-World Runtime(Create Model)</h2>
+                <p>When a model is created through the Create Model command during Runtime, the following behavior has been observed:</p>
+                <div class="table-container">
+                    <table class="QuickRef">
+                        <tr>
+                            <th>Resource</th>
+                            <th>Availability</th>
+                        </tr>
+                        <tr>
+                            <td>Global Variable</td>
+                            <td>Available</td>
+                        </tr>
+                        <tr>
+                            <td>Player Variable</td>
+                            <td>UnAvailable</td>
+                        </tr>
+                        <tr>
+                            <td>object Variable</td>
+                            <td>Available</td>
+                        </tr>
+                    </table>
+                </div>
+                <h3>Observed Behavior:</h3>
+                <ul>
+                    <li>Global Variables are available if a Global Variable with the same name already exists</li>
+                </ul>
                 <h1 id="parameterstype">Parameters Type</h1>
                 <p>Parameters type using for declarate Parameters value when created the variables</p>
                 <img src="Utility/Parameter.png" class="midscriptBlockImg">
@@ -1484,7 +1629,7 @@
                     <li><button onclick="show('vector','vectordropdown')">Vector 2→</button></li>
                     <li>Color</li>
                     <li>Texture</li>
-                    <li><button onclick="show('Group')">Object→</button></li>
+                    <li><button onclick="show('Basepart')">Object→</button></li>
                     <li>Player</li>
                     <li>Picture</li>
                     <li>Audio</li>
@@ -1496,8 +1641,23 @@
                     <li><button onclick="show('array','arraydropdown')">Array→</button></li>
                 </ul>
                 <p>parameters with object type also can store UI object like Ui Button</p>
-                <p>Note:if your player variable parameters type is player you cant change the value to different value</p>
-                <h1>Global Variable</h1>
+                <p><b>Notes</b>:if your variable parameters type is player you cant change the value to different value</p>
+                <h1 id="ParametersOverWriteID">Parameters OverWrite</h1>
+                <p>During Runtime testing, Global Variables with matching names were observed to have changes in their parameter types under certain conditions</p>
+                <p>For Example</p>
+                <p>Model editor using player as parameters when World editor use Text as Parameters</p>
+                <p>Testing Model Editor:Make an Group object in Model editor then created Global variables with player parameters,and Broadcast with player parameters.
+                    create a script who handle to change the global variables value to player,then create a script to handle send broadcast with player as a value of parameters</p>
+                
+                <p>Testing World Editor:Make a Global Variables with Text parameters that have same name with Global variables you create in Model variables,then do it to Broadcast and broadcast parameters.
+                    create a script who handle to change the global variables value to text,then create a script to handle send broadcast with text as a value of parameters
+                </p>
+                <p>To check: create a script who handle to display their value</p>
+                <p>Then you can see the value can being OverWrite between text and player when in the script editor it cant being OverWrite</p>
+                <h3 class="warn">Disclaimer!</h3>
+                <p>Further testing is required to determine whether these behaviors are consistent across different configurations</p>
+                <p>The exact rules governing Global Variable conflicts and parameter type changes have not yet been fully established</p>
+                <h1>Global Variables</h1>
                 <p>Stores data that can be accessed from anywhere in your project</p>
                 <p><b>Note:</b>Enable Sync Variable to synchronize changes with all players in multiplayer</p>
                 <p><b>FunFact:</b>Can be used for simple client-side logic as a lightweight alternative to Client Script</p>
@@ -1516,10 +1676,11 @@
                 <h1 id="localvariable'">Local Variable</h1>
                 <p>Can be created with <b>Create new</b>,Variables created with Create New are local and can only be used inside the current script</p>
                 <button onclick="scrollto('createnew','Commands')">See Create new...</button>
+                
+                <a href="https://uniguidebook.notion.site/Variable-19eac57941ac80889a78f694d42e21b4" target="_blank" rel="noopener noreferrer" class="Link">Visit Uni official Variables documentation(Notion)...</a>
             </div>
             <div id="Basepart" class="page">
-                <h1>Group</h1>
-
+                <h1>Group Object</h1>
                 <p>
                     Group is a basic part used to build objects and environments in your world.
                     UNI provides multiple variations of Part.
@@ -1690,17 +1851,19 @@
                     <p>
                         Adds a tag to the Group.
                     </p>
+                    <p>Parameters:<span class="synString">String</span></p>
 
                     <h1>Remove Tag</h1>
                     <p>
-                        Removes a tag from the Group.
+                        Removes a  specific tag from the Group.
                     </p>
+                    <p>Parameters:<span class="synString">String</span></p>
 
                     <h1>Has Tag</h1>
                     <p>
                         Checks whether the Group has a specific tag.
                     </p>
-
+                    <p>Parameters:<span class="synString">String</span></p>
                 </div>
                 <h1>Group Event</h1>
                     <h2>When Object is Created</h2>
@@ -1715,8 +1878,167 @@
                     <p>Triggered when the object receives a broadcast message</p>
                     <button onclick="show('script')">see Broadcast</button>
                     <p><b>Availability: </b>Model Editor and World/Game Editor(For Group)</p>
+                <a href="https://uniguidebook.notion.site/Group-77411f92584d4ddbbc3ea479d8ddf3d3" target="_blank" rel="noopener noreferrer" class="Link">Visit Uni official Group documentation(Notion)...</a>
             </div>
-        </div>
+            <div id="triggerCompID" class="page">
+                <h1 id="triggerDesc">Trigger</h1>
+                <p>The Trigger component allows an object to detect other objects that enter or exit its trigger area</p>
+                <p>It can be used to detect objects based on the selected Trigger Mode and execute scripts when a detection event occurs</p>
+                <h1 id="triggerBehavior">Behavior</h1>
+                <p>The Trigger component detects objects within its defined area</p>
+                <p>When an object enters or exits the trigger area, the corresponding event can be triggered</p>
+                <ul>
+                    <li>On Trigger Enter: Triggered when an object enters the trigger area</li>
+                    <li>On Trigger Exit: Triggered when an object leaves the trigger area</li>
+                </ul>
+                <p>The Trigger component can use different detection modes to determine which objects can activate its events</p>
+                <p>the trigger cant detect object itself that attached to the trigger</p>
+                <p>the trigger cant detect an object with Collision false even the object has detectable component</p>
+                <h1 id="triggerTransformBehavior">Transform behavior</h1>
+                <p>When the trigger is attached to an object</p>
+                <p>Trigger size,position & rotation is depent on object itself who attached to the trigger</p>
+                <p>Rotation is affect to trigger hitbox</p>
+                <button onclick="toggleinfo('TriggerProp')">See trigger properties</button>
+                <div id="TriggerProp" class="card" style="display: none;">
+                    <h1>Is active</h1>
+                    <p>Determines whether the Trigger component is active</p>
+                    <p>Parameters: Boolean</p>
+                    <h1>Trigger mode</h1>
+                    <p>Determines how the Trigger component detects objects</p>
+                    <h2>Modes:</h2>
+                    <ul>
+                        <li><b>All</b>:Detects all characters and objects with Detectable component</li>
+                        <p><b>Notes</b>:The default this mode is only to detect character who entered or leave the trigger</p>
+                        <p><b>Notes</b>:Make sure your group Object has <b>Detectable Component</b> if you want your group object can detected by Trigger component</p>
+                        <li><b>Tag</b>:detect all object who contains a specified tag</li>
+                    </ul>
+                    <p><b>Note</b>:This property is Non-scriptable</p>
+                    <h1>Trigger tag</h1>
+                    <p>Specifies the tag used to filter objects when Trigger Mode is set to Tag</p>
+                    <p>Only can contains 1 tag</p>
+                    <p><b>Notes</b>:if your object is group object,your object must have <b>Detectable Component</b> and specified tag</p>
+                    <p><b>Notes</b>:character cant be detected if the character doesnt have a specified tag</p>
+                    <p>Parameters:string</p>
+                    <h1>Shape</h1>
+                    <p>Determines the shape of the Trigger detection area</p>
+                    <p>Shapes:</p>
+                    <ul>
+                        <li>Cube</li>
+                        <li>Sphere</li>
+                        <li>Capsule</li>
+                    </ul>
+                    <p><b>Note</b>:This property is Non-scriptable</p>
+                </div>
+                <h1>Trigger Event</h1>
+                <div class="table-container">
+                    <table class="QuickRef">
+                    <tr>
+                        <th>Event Name</th>
+                        <th>Return Value</th>
+                        <th>Parameters</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>On Trigger Enter</td>
+                        <td>Object in event</td>
+                        <td>Object</td>
+                        <td>Object who entered the trigger</td>
+                    </tr>
+                     <tr>
+                        <td>On Trigger Exit</td>
+                        <td>Object in event</td>
+                        <td>Object</td>
+                        <td>Object who exited the trigger</td>
+                    </tr>
+                    </table>
+                </div>
+                <h3>Trigger Requirements</h3>
+                <div class="table-container">
+                    <table class="QuickRef">
+                        <tr>
+                            <th colspan="3">Trigger Mode: All</th>
+                        </tr>
+                        <tr>
+                            <th>Requirements</th>
+                            <th>Group Object</th>
+                            <th>Character</th>
+                        </tr>
+                        <tr>
+                            <td>Detectable Component</td>
+                            <td>Not Required</td>
+                        </tr>
+                        <tr>
+                            <td>Collision</td>
+                            <td>Enabled</td>
+                            <td>Enabled</td>
+                        </tr>
+                        <tr>
+                            <th colspan="3">Trigger Mode: Tag</th>
+                        </tr>
+                        <tr>
+                            <th>Requirements</th>
+                            <th>Group Object</th>
+                            <th>Character</th>
+                        </tr>
+                        <tr>
+                            <td>Detectable Component</td>
+                            <td>Required</td>
+                            <td>Not Required</td>
+                        </tr>
+                        <tr>
+                            <td>Collision</td>
+                            <td>Enabled</td>
+                            <td>Enabled</td>
+                        </tr>
+                        <tr>
+                            <td>Specific Tag</td>
+                            <td>Required</td>
+                            <td>Required</td>
+                        </tr>
+                    </table>
+                </div>
+                <h2>On Trigger Enter</h2>
+                <p><b>Conditions</b>: By default, this event is triggered when a Character enters the Trigger area.</p>
+                <p>Group Objects require the Detectable component to trigger this event.</p>
+
+                <h2>On Trigger Exit</h2>
+                <p><b>Conditions</b>: Triggered when a detected Object leaves the Trigger area.</p>
+                <p><b>Official Notes</b>: This event can also be triggered when an Object is teleported outside the Trigger area.</p>
+                <h1>Editor Behavior</h1>
+                <h2>Added Trigger directly</h2>
+                <p>Added trigger direcly from Component Panel:</p>
+                <ul>
+                    <li>automatically Created Group Object Who has Trigger Component</li>
+                    <li>Created script template in Event automatically</li>
+                </ul>
+                <h3>On trigger Enter Event Script Template:</h3>
+                <p>Written representation</p>
+                <code>set(self.group.color) change to color(red)</code>
+                <h3>On trigger Exit Event Script Template:</h3>
+                <p>Written representation</p>
+                <code>set(self.group.color) change to color(green)</code>
+                <h2>Adding Trigger to an Existing Group Object</h2>
+                <p>The Group Object is created first, then the Trigger Component is added manually:</p>
+                <ul>
+                    <li>Trigger Component Added to the selected group</li>
+                    <li>Script Template not going to be added like "added trigger direcly" Workflow</li>
+                </ul>
+                
+                <a href="https://uniguidebook.notion.site/Trigger-be17a1c20d8746f8acfb7f007e98d777" target="_blank" rel="noopener noreferrer" class="Link">Uni official trigger documentation(Notion)...</a>
+            </div>
+            <div id="DetectableCompID" class="page">
+                <h1>Detectable Component</h1>
+                <p>Detect able component can be used to Can be Detected by <b>Trigger Component</b> to trigger the event
+                     when group object who contains Detectable component is enter and exit the trigger
+                </p>
+                
+                <h1>Properties</h1>
+                <h2>Active</h2>
+                <p>Determines whether the Detectable component is active</p>
+                <p>Detect able component must be in active true to Force the trigger</p>
+                <p><b>Parameters</b>:Boolean</p>
+                <a href="https://uniguidebook.notion.site/Detectable-144ac57941ac80839145d49164d83ef6" target="_blank" rel="noopener noreferrer" class="Link">Uni official Detectable documentation(Notion)...</a>
+            </div>
 
         </div>
         </div>
