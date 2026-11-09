@@ -320,6 +320,17 @@
                 <div id="chgLogHeaders" class="ChgHeaders" style="display: block;">
                     <button onclick="toggleChangelogTabs()" class="toggleLogButton">Close Tab </button>
                 </div>
+                <h1>Update 0.9.1 09/11/2026</h1>
+                <h3>Update log:</h3>
+                <p>1.Script Section</p>
+                <p>*Added Script Availability info</p>
+                <p>*Added event Availability info</p>
+                <p>*Added Broadcast Availability info</p>
+                <p>*Added Broadcast Parameters Availability info</p>
+                <p>2.Other update</p>
+                <p>*fix some bug</p>
+                <p>*fix Some Documentation</p>
+                <p>*Added Close button in FAQ panel</p>
                 <h1>Update 0.9 08/11/2026</h1>
                 <h3>Update log:</h3>
 
@@ -535,7 +546,7 @@
                 <P>In Uni and other platform ,script is a buch of code use for execute instruction</P>
 
                 <h2>Script Type</h2>
-                <p>Uni has 2 different script type Client and Server</p>
+                <p>Uni has 2 different script type Client and Cloud</p>
                 <p><b>Note:</b>only some user can access client type script regulations are not found</p>
 
                 <h1>What is event?</h1>
@@ -595,6 +606,43 @@
                 </p>
                 <p><b>FunFact:</b>This behavior was originally observed/reported by a community member</p>
                 <p><span class="warn">Known Issues</span>:When you created broadcast in Model editor mode,the broadcast may cant be saved even you Update/Saved your model</p>
+
+                <h1>Availability</h1>
+                <p>Broadcast,Broadacast Parameters,script and event in Context</p>
+                <div class="table-container">
+                    <table class="QuickRef">
+                        <tr>
+                            <th>Resource</th>
+                            <th>Model Editor - World Editor</th>
+                            <th>Model Editor - World Runtime(Create Model)</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr>
+                            <td>event and script</td>
+                            <td>Un available</td>
+                            <td>Available Can be executed</td>
+                            <td>Partially Tested</td>
+                        </tr>
+                        <tr>
+                            <td>Broadcast</td>
+                            <td>Available</td>
+                            <td>Available</td>
+                            <td>Tested</td>
+                        </tr>
+                        <tr>
+                            <td>Broadcast Parameters</td>
+                            <td>Available</td>
+                            <td>Available</td>
+                            <td>Tested</td>
+                        </tr>
+                    </table>
+                    <h2>Notes:</h2>
+                    <ul>
+                        <li>Broadcast and Broadcast Parameters must be in the same name to being available in Model editor-World Runtime</li>
+                        <li><span class="warn">Disclaimer:</span>Event and script Availability is Partially tested maybe wrong</li>
+                    </ul>
+                </div>
+                
              </div>
 
              <div id="string" class="page">
